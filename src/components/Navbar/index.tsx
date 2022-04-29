@@ -5,17 +5,20 @@ type Props = {
   rightItems: string[];
 };
 
-export const Navbar = ({ leftLogo, rightItems }: Props) => {
+const Navbar = ({ leftLogo, rightItems }: Props) => {
   return (
     <div className="nav-container">
-      <div className="left-item">{leftLogo}</div>
-      <div className="right-items">
+      <div className="left-item">{leftLogo}</div>(
+      <ul className="right-items">
         {rightItems.map((item, index) => (
-          <div className="right-item" key={index}>
+          <li className="right-item" key={index}>
             {item}
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
+      )
     </div>
   );
 };
+
+export default Navbar;

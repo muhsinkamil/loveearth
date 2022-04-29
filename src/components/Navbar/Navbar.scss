@@ -7,4 +7,10 @@
 
 .right-items {
   display: flex;
+  width: 30%;
+  justify-content: space-between;
+}
+
+li {
+  list-style-type: none;
 }

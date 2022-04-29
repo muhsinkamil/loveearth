@@ -1,2 +1,4 @@
-export { Header } from "./Header";
-export { Navbar } from "./NavBar";
+import Header from "./Header";
+import Navbar from "./Navbar";
+
+export { Navbar, Header };

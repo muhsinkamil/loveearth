@@ -27,7 +27,7 @@ const getListItemStyles = (customAnimation?: any) => ({
   ...customAnimation,
 });
 
-export const Header = ({
+const Header = ({
   contents,
   customStyles,
   customContainerAnimation,
@@ -56,3 +56,5 @@ export const Header = ({
     </motion.div>
   );
 };
+
+export default Header;
