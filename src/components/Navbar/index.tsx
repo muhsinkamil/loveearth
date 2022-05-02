@@ -8,7 +8,7 @@ type Props = {
 const Navbar = ({ leftLogo, rightItems }: Props) => {
   return (
     <div className="nav-container">
-      <div className="left-item">{leftLogo}</div>(
+      <div className="left-item">{leftLogo}</div>
       <ul className="right-items">
         {rightItems.map((item, index) => (
           <li className="right-item" key={index}>
@@ -16,7 +16,6 @@ const Navbar = ({ leftLogo, rightItems }: Props) => {
           </li>
         ))}
       </ul>
-      )
     </div>
   );
 };

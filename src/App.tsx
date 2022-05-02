@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { Header, Navbar } from "./components";
+import { BrowserRouter, Route } from "react-router-dom";
+import { Navbar } from "./components";
+import { About, Home } from "./pages";
 import "./App.scss";
 
 function App() {
@@ -8,10 +10,10 @@ function App() {
   return (
     <div className="App">
       <Navbar leftLogo="LightHouse" rightItems={["WORK", "ABOUT", "CONTACT"]} />
-      <Header
-        contents={["Hello", "World"]}
-        customStyles={{ margin: "5px", fontSize: "7vw" }}
-      />
+      <BrowserRouter>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+      </BrowserRouter>
     </div>
   );
 }
