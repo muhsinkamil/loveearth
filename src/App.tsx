@@ -9,8 +9,15 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar leftLogo="LightHouse" rightItems={["WORK", "ABOUT", "CONTACT"]} />
       <BrowserRouter>
+        <Navbar
+          leftLogo="LightHouse"
+          rightItems={[
+            { item: "WORK", navigateTo: "/work" },
+            { item: "ABOUT", navigateTo: "/about" },
+            { item: "CONTACT", navigateTo: "/contact" },
+          ]}
+        />
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
       </BrowserRouter>
