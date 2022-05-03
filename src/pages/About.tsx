@@ -1,4 +1,5 @@
 import { Header } from "../components";
+import withLoadingScreen from "../hoc/pageTransition";
 
 const About = () => {
   return (
@@ -9,4 +10,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default withLoadingScreen(About);
