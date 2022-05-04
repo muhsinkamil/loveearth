@@ -3,3 +3,16 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+// Scroll bar hide
+body::-webkit-scrollbar {
+  width: 0 !important;
+}
+// firefox - scrollbar hide
+body {
+  overflow: -moz-scrollbars-none;
+}
+// edge - scrollbar hide
+body {
+  -ms-overflow-style: none;
+}
