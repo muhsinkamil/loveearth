@@ -11,24 +11,19 @@ const Home = () => {
       className="std-container"
     >
       <Header
-        contents={
-          // ["A", "DIGITAL", "DESIGN", "STUDIO"],
-          // ["DRIVEN", "BY", "RESEARCH", "&"],
-          // ["STRATEGY"],
-          [
-            "A",
-            "DIGITAL",
-            "DESIGN",
-            "STUDIO",
-            "DRIVEN",
-            "BY",
-            "RESEARCH",
-            "&",
-            "STRATEGY",
-          ]
-        }
+        contents={[
+          "A",
+          "DIGITAL",
+          "DESIGN",
+          "STUDIO",
+          "DRIVEN",
+          "BY",
+          "RESEARCH",
+          "&",
+          "STRATEGY",
+        ]}
         customContainerStyles={{ margin: "5px", paddingTop: "6vw" }}
-        customStyles={{ fontSize: "3.5vw" }}
+        customStyles={{ fontSize: "6.5vw" }}
       />
     </motion.div>
   );
