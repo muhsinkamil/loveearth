@@ -36,7 +36,7 @@
 }
 
 .btn-inner-complex::before {
-  content: "Apply here";
+  content: attr(bfr-content);
 }
 
 .btn-complex:hover {
@@ -48,6 +48,6 @@
 }
 
 .btn-complex:hover .btn-inner-complex::before {
-  content: "Get to know us";
+  content: attr(aftr-content);
   color: black;
 }
