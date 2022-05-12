@@ -1,0 +1,68 @@
+.acc-item {
+  position: relative;
+}
+
+.acc-item:hover::after {
+  background-color: grey;
+  animation: animate 200ms ease-in-out;
+}
+
+.acc-item::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  bottom: 0;
+  height: 1px;
+  background-color: rgb(222, 222, 222);
+  animation: animate-reverse 300ms ease-in;
+
+  /* animation-direction: reverse; */
+}
+
+@keyframes animate-reverse {
+  0% {
+    width: 60%;
+  }
+
+  50% {
+    width: 80%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes animate {
+  0% {
+    width: 40%;
+  }
+
+  50% {
+    width: 60%;
+  }
+
+  75% {
+    width: 80%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.acc-item-open {
+  border-bottom: 1px solid rgb(45, 45, 45);
+}
+
+.acc-item-not-open {
+  border-bottom: 1px solid rgb(222, 222, 222);
+
+  transition: border-bottom 150ms ease-in-out;
+  transition-delay: 150ms;
+}
+
+.acc-item-open:hover,
+.acc-item-not-open:hover {
+  border-bottom: 1px solid grey;
+}
