@@ -1,12 +1,12 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion'
 
 type Props = {
-  contents: string[];
-  customContainerStyles?: { [key: string]: string };
-  customStyles?: { [key: string]: string };
-  customContainerAnimation?: any;
-  customListItemAnimation?: any;
-};
+  contents: string[]
+  customContainerStyles?: { [key: string]: string }
+  customStyles?: { [key: string]: string }
+  customContainerAnimation?: any
+  customListItemAnimation?: any
+}
 
 // const getContainerStyles = (customAnimation?: any) => ({
 //   show: {
@@ -23,7 +23,7 @@ const container = {
       staggerChildren: 0.1,
     },
   },
-};
+}
 
 const listItem = {
   hidden: { y: 400 },
@@ -33,7 +33,7 @@ const listItem = {
       duration: 1,
     },
   },
-};
+}
 
 // const getListItemStyles = (hiddenY: number, customAnimation?: any) => ({
 //   hidden: { y: hiddenY },
@@ -56,12 +56,10 @@ const Header = ({
   return (
     <motion.h1
       style={{
-        fontWeight: "normal",
-        display: "flex",
-        flexDirection: "column",
-        overflow: "hidden",
-        fontSize: "6vw",
-        lineHeight: "4.5vw",
+        fontWeight: 'normal',
+        display: 'flex',
+        flexDirection: 'column',
+        overflow: 'hidden',
         ...customContainerStyles,
       }}
     >
@@ -69,24 +67,24 @@ const Header = ({
         variants={container}
         initial="hidden"
         animate="show"
-        style={{ overflow: "hidden" }}
+        style={{ overflow: 'hidden' }}
       >
         {contents.map((line, x) => (
-          <motion.div style={{ overflow: "hidden", display: "inline-block" }}>
+          <motion.div style={{ overflow: 'hidden', display: 'inline-block' }}>
             <motion.span
               variants={listItem}
-              style={{ display: "inline-block", overflow: "hidden" }}
+              style={{ display: 'inline-block', overflow: 'hidden' }}
             >
               {line}
               <div
-                style={{ display: "inline-block", padding: "0 15px 0 0" }}
+                style={{ display: 'inline-block', padding: '0 15px 0 0' }}
               ></div>
             </motion.span>
           </motion.div>
         ))}
       </motion.div>
     </motion.h1>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
