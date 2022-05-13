@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import "./styles.css";
+import "./styles.scss";
 
 type Props = {
   i: number;
