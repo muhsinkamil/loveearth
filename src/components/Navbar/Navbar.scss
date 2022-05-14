@@ -1,8 +1,16 @@
+@import '../../styles/colors.scss';
+
 .nav-container {
+  background-color: var(--background-primary);
   height: 56px;
   display: flex;
   padding: 1.5vw 2vw;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .right-items {
