@@ -1,4 +1,4 @@
-import { motion, useViewportScroll } from 'framer-motion';
+import { motion, useTransform, useViewportScroll } from 'framer-motion';
 import { Header, LoadingScreen } from '../components';
 import withLoadingScreen from '../hoc/pageTransition';
 import Button from '../components/Button';
@@ -10,7 +10,9 @@ import './home.styles.scss';
 const Home = () => {
   const { scrollY, scrollYProgress } = useViewportScroll();
 
-  // console.log({ scrollYProgress });
+  console.log({ scrollYProgress, scrollY });
+
+  const width = useTransform(scrollYProgress, [0, 1], [400, 1500]);
 
   return (
     <>
@@ -35,7 +37,7 @@ const Home = () => {
             margin: '5px',
             paddingTop: '6vw',
             fontSize: '6vw',
-            lineHeight: '4.5vw',
+            lineHeight: '5vw',
           }}
           // @TODO: check styles
           // customStyles={{ fontSize: "6.5vw" }}
@@ -83,7 +85,7 @@ const Home = () => {
         </section>
       </motion.div>
       <div className="portfolio">
-        <motion.video width="1000" loop muted autoPlay>
+        <motion.video loop muted autoPlay style={{ width }}>
           <source src={portfolio} type="video/mp4" />
         </motion.video>
       </div>

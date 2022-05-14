@@ -31,7 +31,10 @@
 }
 
 .portfolio {
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 4vw;
+  margin-bottom: 8vw;
 }
 
 @media only screen and (max-width: 800px) {
