@@ -1,12 +1,12 @@
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 
 type Props = {
-  contents: string[]
-  customContainerStyles?: { [key: string]: string }
-  customStyles?: { [key: string]: string }
-  customContainerAnimation?: any
-  customListItemAnimation?: any
-}
+  contents: string[];
+  customContainerStyles?: { [key: string]: string };
+  customStyles?: { [key: string]: string };
+  customContainerAnimation?: any;
+  customListItemAnimation?: any;
+};
 
 // const getContainerStyles = (customAnimation?: any) => ({
 //   show: {
@@ -23,7 +23,7 @@ const container = {
       staggerChildren: 0.1,
     },
   },
-}
+};
 
 const listItem = {
   hidden: { y: 400 },
@@ -33,7 +33,7 @@ const listItem = {
       duration: 1,
     },
   },
-}
+};
 
 // const getListItemStyles = (hiddenY: number, customAnimation?: any) => ({
 //   hidden: { y: hiddenY },
@@ -69,8 +69,11 @@ const Header = ({
         animate="show"
         style={{ overflow: 'hidden' }}
       >
-        {contents.map((line, x) => (
-          <motion.div style={{ overflow: 'hidden', display: 'inline-block' }}>
+        {contents.map((line, i) => (
+          <motion.div
+            style={{ overflow: 'hidden', display: 'inline-block' }}
+            key={i}
+          >
             <motion.span
               variants={listItem}
               style={{ display: 'inline-block', overflow: 'hidden' }}
@@ -84,7 +87,7 @@ const Header = ({
         ))}
       </motion.div>
     </motion.h1>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

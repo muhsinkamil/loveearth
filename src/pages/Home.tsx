@@ -1,11 +1,17 @@
-import { motion } from 'framer-motion';
+import { motion, useViewportScroll } from 'framer-motion';
 import { Header, LoadingScreen } from '../components';
 import withLoadingScreen from '../hoc/pageTransition';
-import './home.styles.scss';
-import '../styles/reusableStyles.scss';
 import Button from '../components/Button';
+import portfolio from '../../assets/portfolio.mp4';
+
+import '../styles/reusableStyles.scss';
+import './home.styles.scss';
 
 const Home = () => {
+  const { scrollY, scrollYProgress } = useViewportScroll();
+
+  // console.log({ scrollYProgress });
+
   return (
     <>
       <motion.div
@@ -76,6 +82,11 @@ const Home = () => {
           </div>
         </section>
       </motion.div>
+      <div className="portfolio">
+        <motion.video width="1000" loop muted autoPlay>
+          <source src={portfolio} type="video/mp4" />
+        </motion.video>
+      </div>
     </>
   );
 };
