@@ -1,5 +1,5 @@
 import { motion, useTransform, useViewportScroll } from 'framer-motion';
-import { Header, LoadingScreen, Navbar } from '../components';
+import { Header } from '../components';
 import withLoadingScreen from '../hoc/pageTransition';
 import Button from '../components/Button';
 import portfolio from '../../assets/portfolio.mp4';
@@ -7,6 +7,8 @@ import portfolio from '../../assets/portfolio.mp4';
 import '../styles/reusableStyles.scss';
 import './home.styles.scss';
 import Footer from '../components/Footer';
+import withFooter from '../hoc/footerHOC';
+import withNavBar from '../hoc/NavHOC';
 
 const Home = () => {
   const { scrollY, scrollYProgress } = useViewportScroll();
@@ -90,10 +92,11 @@ const Home = () => {
           <source src={portfolio} type="video/mp4" />
         </motion.video>
       </div>
-
-      <Footer />
     </>
   );
 };
 
-export default withLoadingScreen(Home);
+const pageWithNav = withNavBar(Home);
+const pageWithFooter = withFooter(pageWithNav);
+
+export default withLoadingScreen(pageWithFooter);

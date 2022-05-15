@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import "./styles.scss";
+import { motion } from 'framer-motion';
+import './styles.scss';
 
 const LoadingScreen = () => {
   return (

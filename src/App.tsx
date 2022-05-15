@@ -1,8 +1,6 @@
-import { useState } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { Navbar } from "./components";
-import { About, Home } from "./pages";
-import "./App.scss";
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { About, Home } from './pages';
+import './App.scss';
 
 function App() {
   return (

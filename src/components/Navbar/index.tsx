@@ -1,5 +1,5 @@
-import "./Navbar.scss";
-import { Link } from "react-router-dom";
+import './Navbar.scss';
+import { Link } from 'react-router-dom';
 
 type Props = {
   leftLogo: string;

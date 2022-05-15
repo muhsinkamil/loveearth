@@ -1,6 +1,6 @@
-import React from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { LoadingScreen, Navbar } from "../components";
+import React from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { LoadingScreen, Navbar } from '../components';
 
 const withLoadingScreen = (WrappedComponent: any) => {
   return class Wrapper extends React.Component {
@@ -14,36 +14,26 @@ const withLoadingScreen = (WrappedComponent: any) => {
 
     render() {
       return (
-        // <AnimatePresence>
-        /* {this.state.pageLoading ? (
+        <AnimatePresence>
+          {this.state.pageLoading ? (
             <motion.div
               key="loading-screen"
               initial={{ translateY: 1000 }}
               animate={{
                 translateY: 0,
-                transition: { duration: 0.7, ease: "easeInOut" },
+                transition: { duration: 0.7, ease: 'easeInOut' },
               }}
               exit={{
                 translateY: -1000,
-                transition: { duration: 0.7, ease: "easeInOut" },
+                transition: { duration: 0.7, ease: 'easeInOut' },
               }}
             >
               <LoadingScreen />
             </motion.div>
-          ) : ( */
-        <>
-          <Navbar
-            leftLogo="LightHouse"
-            rightItems={[
-              { item: "WORK", navigateTo: "/work" },
-              { item: "ABOUT", navigateTo: "/about" },
-              { item: "CONTACT", navigateTo: "/contact" },
-            ]}
-          />
-          <WrappedComponent {...this.props} />
-        </>
-        /* )} */
-        /* </AnimatePresence> */
+          ) : (
+            <WrappedComponent {...this.props} />
+          )}
+        </AnimatePresence>
       );
     }
   };
