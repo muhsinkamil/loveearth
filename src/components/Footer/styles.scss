@@ -1,0 +1,39 @@
+.footer-items {
+  // display: grid;
+  // grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  display: flex;
+
+  .footer-flex-item {
+    padding: 6vw 0;
+  }
+
+  .footer-left-items {
+    width: 60%;
+  }
+
+  .footer-right-items {
+    display: flex;
+
+    .footer-rt-container {
+      .ftr-rt-item {
+        padding: 0 2vw 2vw 2vw;
+
+        .footer-sub {
+          margin: 2px 0;
+          color: #757575;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .footer-btn {
+    margin: 2vw 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .footer-items {
+    flex-direction: column;
+  }
+}

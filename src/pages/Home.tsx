@@ -1,18 +1,19 @@
 import { motion, useTransform, useViewportScroll } from 'framer-motion';
-import { Header, LoadingScreen } from '../components';
+import { Header, LoadingScreen, Navbar } from '../components';
 import withLoadingScreen from '../hoc/pageTransition';
 import Button from '../components/Button';
 import portfolio from '../../assets/portfolio.mp4';
 
 import '../styles/reusableStyles.scss';
 import './home.styles.scss';
+import Footer from '../components/Footer';
 
 const Home = () => {
   const { scrollY, scrollYProgress } = useViewportScroll();
 
   console.log({ scrollYProgress, scrollY });
 
-  const width = useTransform(scrollYProgress, [0, 1], [400, 1500]);
+  const width = useTransform(scrollYProgress, [0, 0.8], [400, 1500]);
 
   return (
     <>
@@ -35,7 +36,7 @@ const Home = () => {
           ]}
           customContainerStyles={{
             margin: '5px',
-            paddingTop: '6vw',
+            paddingTop: '14vw',
             fontSize: '6vw',
             lineHeight: '5vw',
           }}
@@ -89,6 +90,8 @@ const Home = () => {
           <source src={portfolio} type="video/mp4" />
         </motion.video>
       </div>
+
+      <Footer />
     </>
   );
 };
