@@ -13,8 +13,6 @@ import withNavBar from '../hoc/NavHOC';
 const Home = () => {
   const { scrollY, scrollYProgress } = useViewportScroll();
 
-  console.log({ scrollYProgress, scrollY });
-
   const width = useTransform(scrollYProgress, [0, 0.8], [400, 1500]);
 
   return (
