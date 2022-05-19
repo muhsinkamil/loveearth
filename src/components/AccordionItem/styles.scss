@@ -1,6 +1,9 @@
 .acc-item {
   position: relative;
 
+  // padding: 1.2vw 0;
+  // color: #2a2a2a;
+
   transition: border-bottom 150ms ease-in-out;
   transition-delay: 150ms;
 }
@@ -11,7 +14,7 @@
 }
 
 .acc-item::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 5px;
   bottom: 0;
@@ -54,10 +57,14 @@
 
 .acc-item-open {
   border-bottom: 1px solid rgb(45, 45, 45);
+
+  .expanded-content {
+    // padding: 1.3vw 0;
+  }
 }
 
 .acc-item-not-open {
-  border-bottom: 1px solid rgb(222, 222, 222);
+  border-bottom: 1px solid rgb(162, 155, 155);
 
   transition: border-bottom 100ms ease-in-out;
   transition-delay: 100ms;

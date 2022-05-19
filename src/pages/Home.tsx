@@ -1,5 +1,5 @@
 import { motion, useTransform, useViewportScroll } from 'framer-motion';
-import { Header } from '../components';
+import { Accordion, Header } from '../components';
 import withLoadingScreen from '../hoc/pageTransition';
 import Button from '../components/Button';
 import portfolio from '../../assets/portfolio.mp4';
@@ -9,13 +9,16 @@ import './home.styles.scss';
 import Footer from '../components/Footer';
 import withFooter from '../hoc/footerHOC';
 import withNavBar from '../hoc/NavHOC';
+import { brandsWorked } from '../translations/brandsWorked';
 
 const Home = () => {
   const { scrollY, scrollYProgress } = useViewportScroll();
 
-  console.log({ scrollYProgress, scrollY });
-
-  const width = useTransform(scrollYProgress, [0, 0.8], [400, 1500]);
+  const width = useTransform(
+    scrollYProgress,
+    [0, 0.8],
+    [400, window.innerWidth + 800],
+  );
 
   return (
     <>
@@ -87,11 +90,17 @@ const Home = () => {
           </div>
         </section>
       </motion.div>
-      <div className="portfolio">
+      <div className="portfolio" style={{ overflow: 'hidden' }}>
         <motion.video loop muted autoPlay style={{ width }}>
           <source src={portfolio} type="video/mp4" />
         </motion.video>
       </div>
+
+      <section className="collabs std-container">
+        <h3 className="brands-worked">brands we've worked with</h3>
+
+        <Accordion accContent={brandsWorked} />
+      </section>
     </>
   );
 };

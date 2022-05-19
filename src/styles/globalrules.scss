@@ -19,6 +19,10 @@ body {
   -ms-overflow-style: none;
 }
 
+::selection {
+  background: #a2a09c;
+}
+
 p {
   font-size: 14px;
   line-height: 1.2;
