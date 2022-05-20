@@ -45,4 +45,24 @@ with high-fidelity designs which were then handed over to the Unilever developme
   },
 ];
 
-export { brandsWorked };
+const services = [
+  'customer research',
+  'Trends Analysis',
+  'Competitive review',
+  'focus group',
+  'break',
+  'market research',
+  'art direction',
+  'interactive design',
+  'Immersive design',
+  'Wireframing',
+  'break',
+  'copy creation',
+  'market research',
+  'art direction',
+  'interactive design',
+  'Immersive design',
+  'Wireframing',
+];
+
+export { brandsWorked, services };

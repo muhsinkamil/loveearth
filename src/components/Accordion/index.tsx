@@ -12,8 +12,6 @@ type AccordionProps = {
 function Accordion({ accContent }: AccordionProps) {
   const [expanded, setExpanded] = useState<false | number>(false);
 
-  console.log({ accContent });
-
   return (
     <>
       {accContent.map((accItem, i) => (

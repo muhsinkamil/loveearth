@@ -1,0 +1,28 @@
+aside {
+  font-size: 4vw;
+  /* 	text-align: right; */
+}
+
+.container {
+  display: flex;
+  /* 	gap: 30px; */
+}
+
+.ruler {
+  width: 5px;
+  background-color: black;
+  /* 	height: 100vh; */
+}
+
+main {
+  width: 100vw;
+}
+
+.left {
+  width: 50%;
+}
+
+.right {
+  /* 	display: flex; */
+  padding: 4vw 0;
+}

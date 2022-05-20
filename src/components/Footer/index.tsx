@@ -4,7 +4,16 @@ import './styles.scss';
 
 function Footer() {
   return (
-    <div className="std-container" style={{ paddingTop: '6vw' }}>
+    <div
+      className="std-container"
+      style={{
+        paddingTop: '6vw',
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+      }}
+    >
       <div style={{ paddingBottom: '15px' }}>Next page</div>
       <Header
         contents={['CASE STUDIES']}
