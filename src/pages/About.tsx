@@ -1,7 +1,8 @@
-import { Link } from 'react-router-dom';
 import { Header } from '../components';
 import AboutScroll from '../components/AboutScroll';
-import Footer from '../components/Footer';
+import officeImg from '../../assets/officeHappy.jpg';
+import './about.styles.scss';
+
 import withFooter from '../hoc/footerHOC';
 import withNavBar from '../hoc/NavHOC';
 import withLoadingScreen from '../hoc/pageTransition';
@@ -30,6 +31,10 @@ const About = () => {
         // @TODO: check styles
         // customStyles={{ fontSize: "6.5vw" }}
       />
+
+      <section className="header-img">
+        <img src={officeImg} className="office-img" />
+      </section>
 
       <AboutScroll />
     </div>

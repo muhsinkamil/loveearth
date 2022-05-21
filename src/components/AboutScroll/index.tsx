@@ -29,6 +29,7 @@ function AboutScroll() {
       className="container"
       style={{
         display: 'flex',
+        overflowX: 'hidden',
       }}
     >
       <div className="left" style={{ width: '50%' }} />

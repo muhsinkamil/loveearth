@@ -1,5 +1,6 @@
 import './Navbar.scss';
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 type Props = {
   leftLogo: string;
@@ -7,8 +8,22 @@ type Props = {
 };
 
 const Navbar = ({ leftLogo, rightItems }: Props) => {
+  const [fixedPos, setFixedPos] = useState(false);
+
+  useEffect(() => {
+    const fixNavBar = () => {
+      if (window.scrollY > 200) setFixedPos(true);
+      else setFixedPos(false);
+    };
+
+    window.addEventListener('scroll', fixNavBar);
+  }, []);
+
   return (
-    <div className="nav-container">
+    <div
+      className="nav-container"
+      style={fixedPos ? { position: 'fixed' } : {}}
+    >
       <Link to="/">
         <div className="left-item">{leftLogo}</div>
       </Link>
