@@ -42,6 +42,9 @@ const About = () => {
 };
 
 const pageWithNav = withNavBar(About);
-const pageWithFooter = withFooter(pageWithNav);
+const pageWithFooter = withFooter(pageWithNav, {
+  nextPageLabel: 'work',
+  nextPageLink: '/work',
+});
 
 export default withLoadingScreen(pageWithFooter);

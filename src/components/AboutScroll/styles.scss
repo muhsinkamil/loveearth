@@ -3,11 +3,16 @@
   /* 	gap: 30px; */
 
   .left {
-    position: sticky;
     width: 50%;
+    // background-color: red;
+    padding: 100px 0;
+    position: sticky;
+    top: 0px;
     height: 100%;
-    background-color: red;
-    top: 5vh;
+    font-size: 4.8vw;
+    line-height: 0.8;
+    font-weight: 400;
+    text-transform: uppercase;
   }
 
   .right {
@@ -24,4 +29,11 @@
       height: auto;
     }
   }
+}
+
+path {
+  stroke-width: 3;
+  stroke: grey;
+  fill: none;
+  stroke-width: 3px;
 }

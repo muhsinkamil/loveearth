@@ -1,8 +1,16 @@
+import { Link } from 'react-router-dom';
 import Button from '../Button';
 import Header from '../Header';
 import './styles.scss';
 
-function Footer() {
+type Props = {
+  nextPageProps: {
+    nextPageLabel: string;
+    nextPageLink: string;
+  };
+};
+
+function Footer({ nextPageProps }: Props) {
   return (
     <div
       className="std-container"
@@ -15,14 +23,11 @@ function Footer() {
       }}
     >
       <div style={{ paddingBottom: '15px' }}>Next page</div>
-      <Header
-        contents={['CASE STUDIES']}
-        customContainerStyles={{
-          fontSize: '4.8vw',
-          lineHeight: '0.8',
-          fontWeight: '400',
-        }}
-      />
+      <h3>
+        <Link to={nextPageProps.nextPageLink} className="hvr-underln-anim">
+          {nextPageProps.nextPageLabel}
+        </Link>
+      </h3>
 
       <div className="footer-items">
         <div className="footer-left-items footer-flex-item">
