@@ -3,12 +3,18 @@
   /* 	gap: 30px; */
 
   .left {
+    position: sticky;
     width: 50%;
+    height: 100%;
+    background-color: red;
+    top: 5vh;
   }
 
   .right {
     display: flex;
     padding: 4vw 0;
+    overflow: hidden;
+    width: 50%;
 
     .ruler {
       width: 5px;
@@ -18,9 +24,4 @@
       height: auto;
     }
   }
-}
-
-aside {
-  font-size: 4vw;
-  /* 	text-align: right; */
 }

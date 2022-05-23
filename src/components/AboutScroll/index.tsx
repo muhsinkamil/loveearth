@@ -1,19 +1,13 @@
 import './styles.scss';
 import AboutScrollAtom from './AboutScrollAtom';
+import portrait from '../../../assets/portraitWomen.mp4';
 
 function AboutScroll() {
   return (
-    <div
-      className="container"
-      style={{
-        display: 'flex',
-        overflowX: 'hidden',
-      }}
-    >
-      <div className="left" style={{ width: '50%' }}>
-        Research
-      </div>
-      <div className="right" style={{ width: '50%', fontSize: '4vw' }}>
+    <div className="container">
+      <div className="left">Research</div>
+
+      <div className="right">
         <div className="ruler" />
         <div className="scroll-elements">
           {[...Array(10).keys()].map((el, i) => {

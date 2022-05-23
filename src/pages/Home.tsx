@@ -6,7 +6,6 @@ import portfolio from '../../assets/portfolio.mp4';
 
 import '../styles/reusableStyles.scss';
 import './home.styles.scss';
-import Footer from '../components/Footer';
 import withFooter from '../hoc/footerHOC';
 import withNavBar from '../hoc/NavHOC';
 import { brandsWorked } from '../translations/brandsWorked';

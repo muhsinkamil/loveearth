@@ -13,7 +13,7 @@ function AboutScrollAtom({ offset }: Props) {
   const x = useTransform(
     scrollYProgress,
     [0, 0.4 + offset * 0.03],
-    [top + offset * 200, 0],
+    [offset * 200, 0],
   );
 
   useEffect(() => {
@@ -26,6 +26,7 @@ function AboutScrollAtom({ offset }: Props) {
       <motion.aside
         style={{
           x,
+          fontSize: '4vw',
         }}
       >
         Customer Research
