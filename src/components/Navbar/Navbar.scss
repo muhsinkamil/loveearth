@@ -12,14 +12,18 @@
   right: 0;
   bottom: 0;
   z-index: 100;
-}
 
-.right-items {
-  display: flex;
-  gap: 5%;
-  width: 70%;
-  font-size: 14px;
-  justify-content: flex-end;
+  .right-items {
+    display: flex;
+    gap: 5%;
+    width: 70%;
+    font-size: 14px;
+    justify-content: flex-end;
+
+    .right-item {
+      cursor: pointer;
+    }
+  }
 }
 
 li {

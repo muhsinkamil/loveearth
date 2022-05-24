@@ -9,6 +9,7 @@ import './home.styles.scss';
 import withFooter from '../hoc/footerHOC';
 import withNavBar from '../hoc/NavHOC';
 import { brandsWorked } from '../translations/brandsWorked';
+import { useContactForm } from '../providers/contact';
 
 const Home = () => {
   const { scrollY, scrollYProgress } = useViewportScroll();

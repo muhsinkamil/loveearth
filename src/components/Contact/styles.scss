@@ -19,6 +19,12 @@
   width: 100%;
   height: 92vh;
   position: relative;
+  overflow: scroll;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0 !important;
+  }
 
   .close-btn {
     position: absolute;
@@ -26,6 +32,9 @@
     top: 2vw;
     text-transform: uppercase;
     cursor: pointer;
+    outline: none;
+    border: none;
+    background: none;
   }
 
   .contact-head {
@@ -49,22 +58,37 @@
       gap: 5px;
       margin-bottom: 5vw;
 
-      input {
-        padding: 5px;
-        width: 50%;
-        outline: none;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        margin: 10px 20px;
+      .label-input {
+        position: absolute;
+        top: -5px;
+        left: 0;
       }
 
-      .msg-box {
+      .full-row {
         width: 100%;
-        outline: none;
-        border-top: none;
-        border-left: none;
-        border-right: none;
+      }
+
+      .row-element {
+        position: relative;
+        width: 100%;
+        margin: 20px 10px;
+
+        .form-input {
+          padding: 5px;
+          width: 100%;
+          outline: none;
+          border-top: none;
+          border-left: none;
+          border-right: none;
+        }
+
+        .msg-box {
+          width: 100%;
+          outline: none;
+          border-top: none;
+          border-left: none;
+          border-right: none;
+        }
       }
     }
   }

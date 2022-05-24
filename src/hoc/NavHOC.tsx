@@ -11,7 +11,7 @@ const withNavBar = (WrappedComponent: any) => {
             rightItems={[
               { item: 'WORK', navigateTo: '/work' },
               { item: 'ABOUT', navigateTo: '/about' },
-              { item: 'CONTACT', navigateTo: '/contact' },
+              { item: 'CONTACT' },
             ]}
           />
           <WrappedComponent {...this.props} />

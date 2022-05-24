@@ -11,12 +11,12 @@ function AboutScroll() {
   useEffect(() => {
     const changeContent = () => {
       // console.log(scrollYProgress);
-      if (window.scrollY > 2000) {
+      if (window.scrollY > 1800) {
         setContent('Direction');
-      } else if (window.scrollY > 1500) {
-        setContent('Design');
-      } else {
+      } else if (window.scrollY > 1300) {
         setContent('Research');
+      } else {
+        setContent('Design');
       }
     };
 
@@ -54,7 +54,7 @@ function AboutScroll() {
 
           <motion.svg width="500" height="500">
             <motion.path
-              d="M10 10 L550 10"
+              d="M0 10 L500 10"
               style={{
                 pathLength: scrollYProgress,
               }}
