@@ -1,7 +1,5 @@
-import React from 'react';
-
-function Backdrop() {
-  return <div>Backdrop</div>;
+function Backdrop({ children }: any) {
+  return <div className="backdrop">{children}</div>;
 }
 
 export default Backdrop;

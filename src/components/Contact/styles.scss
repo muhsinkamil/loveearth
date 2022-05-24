@@ -1,2 +1,91 @@
 .backdrop {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(#000000, 0.5);
+  display: flex;
+  align-items: flex-end;
+}
+
+.contact-form-wrapper {
+  padding: 5vw 2vw;
+  background-color: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 100%;
+  height: 92vh;
+  position: relative;
+
+  .close-btn {
+    position: absolute;
+    right: 2vw;
+    top: 2vw;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .contact-head {
+    font-size: 4.8vw;
+    line-height: 0.8;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .contact-desc {
+    width: 40%;
+    font-size: 1.5vw;
+  }
+
+  .form-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    .form-row {
+      display: flex;
+      gap: 5px;
+      margin-bottom: 5vw;
+
+      input {
+        padding: 5px;
+        width: 50%;
+        outline: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        margin: 10px 20px;
+      }
+
+      .msg-box {
+        width: 100%;
+        outline: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+      }
+    }
+  }
+
+  .footer-right-items {
+    display: flex;
+
+    .footer-rt-container {
+      .ftr-rt-item {
+        padding: 0 2vw 2vw 2vw;
+
+        .footer-sub {
+          margin-bottom: 0.5vw;
+          color: #757575;
+          font-size: max(1.2vw, 14px);
+        }
+
+        .footer-desc {
+          font-size: max(1.2vw, 14px);
+        }
+      }
+    }
+  }
 }
