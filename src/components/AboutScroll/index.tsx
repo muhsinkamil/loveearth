@@ -1,7 +1,7 @@
 import './styles.scss';
+import { useState, useEffect } from 'react';
+import { AnimatePresence, motion, useViewportScroll } from 'framer-motion';
 import AboutScrollAtom from './AboutScrollAtom';
-import { useViewportScroll, motion, AnimatePresence } from 'framer-motion';
-import { useEffect, useState } from 'react';
 
 function AboutScroll() {
   const [content, setContent] = useState('Research');
@@ -12,9 +12,9 @@ function AboutScroll() {
     const changeContent = () => {
       // console.log(scrollYProgress);
       if (window.scrollY > 2000) {
-        setContent('Design');
-      } else if (window.scrollY > 1500) {
         setContent('Direction');
+      } else if (window.scrollY > 1500) {
+        setContent('Design');
       } else {
         setContent('Research');
       }
@@ -54,7 +54,7 @@ function AboutScroll() {
 
           <motion.svg width="500" height="500">
             <motion.path
-              d="M10 10 L500 10"
+              d="M10 10 L550 10"
               style={{
                 pathLength: scrollYProgress,
               }}

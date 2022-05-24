@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { About, Home } from './pages';
 import './App.scss';
+import { ContactForm } from './components';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           </Switch>
         </div>
       </BrowserRouter>
+      <ContactForm />
     </div>
   );
 }
