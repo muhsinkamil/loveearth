@@ -17,6 +17,7 @@ function Accordion({ accContent }: AccordionProps) {
       {accContent.map((accItem, i) => (
         <AccordionItem
           i={i}
+          key={i}
           isActive={expanded}
           setActive={setExpanded}
           title={accItem.accName}
