@@ -23,13 +23,13 @@ const ContactForm = () => {
           <motion.div
             key="contact"
             className="contact-form-wrapper"
-            initial={{ y: '100vh' }}
+            initial={{ y: 1000 }}
             animate={{
               y: 0,
               transition: { duration: 0.5, ease: 'easeInOut' },
             }}
             exit={{
-              y: '100vh',
+              y: 1000,
               transition: { duration: 0.5, ease: 'easeInOut' },
             }}
           >
@@ -63,10 +63,21 @@ const ContactForm = () => {
                   <div className="footer-sub">Business Inquiries</div>
                   <div className="footer-desc">hello@lighthouse.com</div>
                 </div>
+              </div>
+            </div>
 
-                <div className="ftr-rt-item">
-                  <div className="footer-sub">Business Inquiries</div>
-                  <div className="footer-desc">hello@lighthouse.com</div>
+            <div className="full-keyline" />
+            <div className="footer-icon-container">
+              <div className="ftr-icon-left">LightHouse &copy; 2022</div>
+              <div className="ftr-icon-right">
+                <div className="ftr-icon">
+                  <span className="hvr-underln-anim">Github</span>
+                </div>
+                <div className="ftr-icon">
+                  <span className="hvr-underln-anim">Twitter</span>
+                </div>
+                <div className="ftr-icon">
+                  <span className="hvr-underln-anim">Linkedin</span>
                 </div>
               </div>
             </div>

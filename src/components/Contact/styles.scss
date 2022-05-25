@@ -10,7 +10,7 @@
 }
 
 .contact-form-wrapper {
-  padding: 5vw 2vw;
+  padding: 5vw 2vw 0 2vw;
   background-color: white;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -116,8 +116,11 @@
 
   .footer-right-items {
     display: flex;
+    padding-bottom: 3vw;
 
     .footer-rt-container {
+      width: 50%;
+
       .ftr-rt-item {
         padding: 0 2vw 2vw 0;
 
@@ -130,6 +133,36 @@
         .footer-desc {
           font-size: max(1.2vw, 14px);
         }
+      }
+    }
+  }
+
+  .full-keyline {
+    height: 1px;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: grey;
+    grid-column: 1 / 3;
+  }
+
+  .footer-icon-container {
+    display: flex;
+    justify-content: space-between;
+    grid-column: 1 / 3;
+    padding: 0.5vw 0;
+
+    .ftr-icon-left {
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .ftr-icon-right {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      .ftr-icon {
+        font-size: 12px;
+        margin-right: 2em;
       }
     }
   }
