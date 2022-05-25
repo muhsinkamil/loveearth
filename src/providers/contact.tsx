@@ -16,7 +16,7 @@ interface ContactContextType {
 
 const ContactContext = createContext<ContactContextType | undefined>(undefined);
 
-const initialState = { isContactFormOpen: true };
+const initialState = { isContactFormOpen: false };
 
 const contactFormReducer = (state: ContactContextState, action: any) => {
   switch (action.type) {

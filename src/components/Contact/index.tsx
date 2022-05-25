@@ -33,7 +33,10 @@ const ContactForm = () => {
               transition: { duration: 0.5, ease: 'easeInOut' },
             }}
           >
-            <button className="close-btn" onClick={handleCloseForm}>
+            <button
+              className="close-btn hvr-underln-anim"
+              onClick={handleCloseForm}
+            >
               close
             </button>
             <div className="contact-head">Contact</div>

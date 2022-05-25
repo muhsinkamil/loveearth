@@ -42,20 +42,22 @@ const Navbar = ({ leftLogo, rightItems }: Props) => {
         {rightItems.map((item, index) => {
           if (item.navigateTo) {
             return (
-              <li className="right-item" key={index}>
-                <Link to={item.navigateTo}>{item.item}</Link>
+              <li
+                className="right-item "
+                key={index}
+                style={{ display: 'inline-block' }}
+              >
+                <Link to={item.navigateTo} className="hvr-underln-anim">
+                  {item.item}
+                </Link>
               </li>
             );
           }
 
           if (item.item === 'CONTACT') {
             return (
-              <li
-                className="right-item"
-                key={index}
-                onClick={handleContactClick}
-              >
-                {item.item}
+              <li key={index} onClick={handleContactClick}>
+                <span className="right-item hvr-underln-anim">{item.item}</span>
               </li>
             );
           }

@@ -1,29 +1,8 @@
 .std-container {
-  .hvr-underln-anim {
-    position: relative;
-    cursor: pointer;
-    text-transform: uppercase;
+  .footer-nxt-lnk {
     font-size: 4.8vw;
     line-height: 0.8;
     font-weight: 400;
-  }
-
-  .hvr-underln-anim::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 10px;
-    left: 0;
-    background-color: rgb(45, 45, 45);
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-  }
-
-  .hvr-underln-anim:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
   }
 }
 

@@ -24,7 +24,10 @@ function Footer({ nextPageProps }: Props) {
     >
       <div style={{ paddingBottom: '15px' }}>Next page</div>
       <h3>
-        <Link to={nextPageProps.nextPageLink} className="hvr-underln-anim">
+        <Link
+          to={nextPageProps.nextPageLink}
+          className="footer-nxt-lnk hvr-underln-anim"
+        >
           {nextPageProps.nextPageLabel}
         </Link>
       </h3>
