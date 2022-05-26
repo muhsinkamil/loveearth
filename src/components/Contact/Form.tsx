@@ -1,5 +1,4 @@
 import Button from '../Button';
-import './styles.scss';
 
 const FormElements = () => {
   return (

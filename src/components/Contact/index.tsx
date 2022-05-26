@@ -66,7 +66,7 @@ const ContactForm = () => {
               </div>
             </div>
 
-            <div className="full-keyline" />
+            <hr className="full-keyline" />
             <div className="footer-icon-container">
               <div className="ftr-icon-left">LightHouse &copy; 2022</div>
               <div className="ftr-icon-right">
