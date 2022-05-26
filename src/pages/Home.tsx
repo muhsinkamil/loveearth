@@ -1,15 +1,14 @@
 import { motion, useTransform, useViewportScroll } from 'framer-motion';
-import { Accordion, Header } from '../components';
+import { Accordion, Header, Works, Button } from '../components';
 import withLoadingScreen from '../hoc/pageTransition';
-import Button from '../components/Button';
-import portfolio from '../../assets/portfolio.mp4';
 
-import '../styles/reusableStyles.scss';
-import './home.styles.scss';
 import withFooter from '../hoc/footerHOC';
 import withNavBar from '../hoc/NavHOC';
 import { brandsWorked } from '../translations/brandsWorked';
-import { useContactForm } from '../providers/contact';
+
+import portfolio from '../../assets/portfolio.mp4';
+import '../styles/reusableStyles.scss';
+import './home.styles.scss';
 
 const Home = () => {
   const { scrollY, scrollYProgress } = useViewportScroll();
@@ -41,13 +40,17 @@ const Home = () => {
           ]}
           customContainerStyles={{
             margin: '5px',
-            paddingTop: '14vw',
+            paddingTop: '7vw',
             fontSize: '6vw',
             lineHeight: '5vw',
           }}
           // @TODO: check styles
           // customStyles={{ fontSize: "6.5vw" }}
         />
+
+        <section className="works-home-section">
+          <Works />
+        </section>
 
         <section className="about-section-container">
           <div className="about-left-section">

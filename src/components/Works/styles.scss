@@ -1,0 +1,17 @@
+.works-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+  .works-img {
+    width: 100%;
+    height: 30vw;
+    cursor: pointer;
+    clip-path: ellipse(100% 100% at 50% 50%);
+    transition: clip-path 1s;
+
+    &:hover {
+      clip-path: ellipse(45% 50% at 50% 50%);
+    }
+  }
+}
