@@ -45,3 +45,33 @@
     flex-direction: column;
   }
 }
+
+.footer-icon-container {
+  display: flex;
+  justify-content: space-between;
+  grid-column: 1 / 3;
+  padding: 0.5vw 0;
+  padding-bottom: 20px;
+
+  .ftr-icon-left {
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  .ftr-icon-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .ftr-icon {
+      font-size: 12px;
+      margin-right: 2em;
+    }
+  }
+}
+
+.full-ftr-keyline {
+  height: 1px;
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: grey;
+}

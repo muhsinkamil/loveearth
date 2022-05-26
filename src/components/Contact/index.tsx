@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { unsetBodyOverflow } from '../../helpers';
 import { useContactForm } from '../../providers/contact';
+import FooterIconLine from '../Footer/FooterIconLine';
 import BackDrop from './Backdrop';
 import FormElements from './Form';
 import './styles.scss';
@@ -66,21 +67,8 @@ const ContactForm = () => {
               </div>
             </div>
 
-            <hr className="full-keyline" />
-            <div className="footer-icon-container">
-              <div className="ftr-icon-left">LightHouse &copy; 2022</div>
-              <div className="ftr-icon-right">
-                <div className="ftr-icon">
-                  <span className="hvr-underln-anim">Github</span>
-                </div>
-                <div className="ftr-icon">
-                  <span className="hvr-underln-anim">Twitter</span>
-                </div>
-                <div className="ftr-icon">
-                  <span className="hvr-underln-anim">Linkedin</span>
-                </div>
-              </div>
-            </div>
+            <div className="full-keyline" />
+            <FooterIconLine />
           </motion.div>
         </BackDrop>
       )}
