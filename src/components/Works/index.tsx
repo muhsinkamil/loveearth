@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import desertImg from '../../../assets/desertimg.jpg';
 import womenUnderWater from '../../../assets/womenUnderWater.jpg';
 import fGroup from '../../../assets/fGroup.jpg';
@@ -8,10 +9,29 @@ import './styles.scss';
 function Works() {
   return (
     <div className="works-container">
-      <img src={desertImg} alt="womenUnderWater" className="works-img" />
-      <img src={womenUnderWater} alt="womenUnderWater" className="works-img" />
-      <img src={fGroup} alt="fashiongGroup" className="works-img" />
-      <img src={balloons} alt="balloons" className="works-img" />
+      {[desertImg, womenUnderWater, fGroup, balloons].map((imageSrc, i) => {
+        return (
+          <div className="img-container" key={i}>
+            <motion.img
+              src={imageSrc}
+              alt={imageSrc}
+              className="works-img"
+              initial={{
+                scale: 1.5,
+                rotate: '10deg',
+              }}
+              animate={{
+                scale: 1,
+                rotate: '0deg',
+              }}
+              transition={{
+                duration: 0.8,
+                ease: 'easeInOut',
+              }}
+            />
+          </div>
+        );
+      })}
     </div>
   );
 }
