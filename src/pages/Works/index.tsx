@@ -17,8 +17,8 @@ const Work = () => {
       exit={{ translateX: 500 }}
       transition={{ duration: 400 }}
       className="std-container"
-      onBlur={() => {
-        console.log('blue');
+      onClick={() => {
+        if (isFilterOpen) setFilterOpen(false);
       }}
     >
       <Header
