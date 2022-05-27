@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { About, Home } from './pages';
+import { About, Home, Work } from './pages';
 import './App.scss';
 import { ContactForm } from './components';
 import { ContactFormProvider } from './providers/contact';
@@ -11,6 +11,7 @@ function App() {
         <BrowserRouter>
           <div className="app-routes">
             <Switch>
+              <Route path="/work" component={Work} />
               <Route path="/about" component={About} />
               <Route exact path="/" component={Home} />
             </Switch>

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import desertImg from '../../../assets/desertimg.jpg';
+import desertImg from '../../../assets/desertImg.jpg';
 import womenUnderWater from '../../../assets/womenUnderWater.jpg';
 import fGroup from '../../../assets/fGroup.jpg';
 import balloons from '../../../assets/balloons.jpg';
