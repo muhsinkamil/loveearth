@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navbar } from '../components';
 
-const withNavBar = (WrappedComponent: any) => {
+const withNavBar = (WrappedComponent: any, bg: string) => {
   return class Wrapper extends React.Component {
     render() {
       return (
@@ -13,6 +13,7 @@ const withNavBar = (WrappedComponent: any) => {
               { item: 'ABOUT', navigateTo: '/about' },
               { item: 'CONTACT' },
             ]}
+            bg={bg}
           />
           <WrappedComponent {...this.props} />
         </>

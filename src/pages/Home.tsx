@@ -20,7 +20,7 @@ const Home = () => {
   );
 
   return (
-    <>
+    <div style={{ backgroundColor: '#f0f0f0' }}>
       <motion.div
         exit={{ translateX: 500 }}
         transition={{ duration: 400 }}
@@ -39,7 +39,7 @@ const Home = () => {
             'STRATEGY',
           ]}
           customContainerStyles={{
-            margin: '5px',
+            margin: '0 5px',
             paddingTop: '7vw',
             fontSize: '6vw',
             lineHeight: '5vw',
@@ -104,11 +104,12 @@ const Home = () => {
 
         <Accordion accContent={brandsWorked} />
       </section>
-    </>
+    </div>
   );
 };
 
-const pageWithNav = withNavBar(Home);
+// Home color = --white-background-primary
+const pageWithNav = withNavBar(Home, '#f0f0f0');
 const pageWithFooter = withFooter(pageWithNav, {
   nextPageLabel: 'About',
   nextPageLink: '/about',

@@ -7,9 +7,10 @@ import { hideBodyOverflow } from '../../helpers';
 type Props = {
   leftLogo: string;
   rightItems: { item: string; navigateTo?: string }[];
+  bg: string;
 };
 
-const Navbar = ({ leftLogo, rightItems }: Props) => {
+const Navbar = ({ leftLogo, rightItems, bg }: Props) => {
   const [fixedPos, setFixedPos] = useState(false);
 
   const {
@@ -33,7 +34,11 @@ const Navbar = ({ leftLogo, rightItems }: Props) => {
   return (
     <div
       className="nav-container"
-      style={fixedPos ? { position: 'fixed' } : {}}
+      style={
+        fixedPos
+          ? { position: 'fixed', backgroundColor: bg }
+          : { backgroundColor: bg }
+      }
     >
       <Link to="/">
         <div className="left-item">{leftLogo}</div>

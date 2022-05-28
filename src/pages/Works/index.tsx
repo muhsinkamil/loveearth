@@ -111,6 +111,7 @@ const Work = () => {
       onClick={() => {
         if (isFilterOpen) setFilterOpen(false);
       }}
+      style={{ backgroundColor: '#f0f0f0' }}
     >
       <Header
         contents={['WORK']}
@@ -203,7 +204,8 @@ const Work = () => {
   );
 };
 
-const pageWithNav = withNavBar(Work);
+// Works color = --white-background-primary
+const pageWithNav = withNavBar(Work, '#f0f0f0');
 const pageWithFooter = withFooter(pageWithNav, {
   nextPageLabel: 'About',
   nextPageLink: '/about',
