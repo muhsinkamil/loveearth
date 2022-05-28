@@ -17,6 +17,7 @@ html {
 // edge - scrollbar hide
 body {
   -ms-overflow-style: none;
+  overscroll-behavior: none;
 }
 
 ::selection {
