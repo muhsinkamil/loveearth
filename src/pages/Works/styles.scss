@@ -1,13 +1,14 @@
 .std-container {
   .filter-container {
-    display: flex;
-    justify-content: center;
-    font-size: max(1vw, 20px);
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    font-size: max(1vw, 16px);
     text-transform: uppercase;
     margin-bottom: 10px;
 
     .filter {
       margin-right: 1vw;
+      text-align: right;
     }
 
     .selected-filter-container {
@@ -16,13 +17,13 @@
 
       .work-plus {
         padding-left: 4px;
-        font-size: max(1vw, 18px);
+        font-size: max(1vw, 14px);
       }
 
       .filter-list {
         position: absolute;
         top: 30px;
-        width: 150%;
+        width: 15vw;
         border-radius: 10px;
         background-color: #a8a6a6;
         overflow: hidden;
@@ -52,8 +53,22 @@
     .works-image-container {
       // overflow: hidden;
 
+      .works-grid-image {
+        cursor: pointer;
+      }
+
+      .categories {
+        .category {
+          font-size: 16px;
+          text-transform: uppercase;
+          margin: 5px;
+        }
+      }
+
       .center-dot {
-        vertical-align: center;
+        margin: 0 2px;
+        font-weight: 800;
+        vertical-align: 3px;
       }
 
       .works-grid-image {
@@ -61,7 +76,7 @@
         height: 35vw;
         cursor: pointer;
         padding-top: 20px;
-        padding-bottom: 50px;
+        padding-bottom: 20px;
         //   border-top: 2px solid black;
         //   padding-right: 50px;
       }
