@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Header } from '../../components';
 import withFooter from '../../hoc/footerHOC';
@@ -6,7 +7,6 @@ import withLoadingScreen from '../../hoc/pageTransition';
 import desertImg from '../../../assets/desertImg.jpg';
 
 import './styles.scss';
-import { useState } from 'react';
 
 const Work = () => {
   const [selectedFilter, setSelectedFilter] = useState('All work');
@@ -47,9 +47,9 @@ const Work = () => {
             className="filter-list"
             style={!isFilterOpen ? { display: 'none' } : {}}
           >
-            <div className="filter-option">Art</div>
-            <div className="filter-option">Design</div>
-            <div className="filter-option">wildlife</div>
+            {['Art', 'Design', 'wildlife'].map((option) => {
+              return <div className="filter-option">{option}</div>;
+            })}
           </div>
         </div>
       </div>

@@ -23,11 +23,17 @@
         position: absolute;
         top: 30px;
         width: 150%;
-        border-radius: 20px;
+        border-radius: 10px;
+        background-color: #a8a6a6;
+        overflow: hidden;
 
         .filter-option {
-          background-color: grey;
+          font-size: 18px;
           padding: max(0.5vw, 10px) max(0.5vw, 10px);
+
+          &:hover {
+            background-color: #b6b2b2;
+          }
         }
       }
     }
