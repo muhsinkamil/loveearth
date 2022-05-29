@@ -8,6 +8,41 @@ import './about.styles.scss';
 import withFooter from '../hoc/footerHOC';
 import withNavBar from '../hoc/NavHOC';
 import withLoadingScreen from '../hoc/pageTransition';
+import Person1 from '../../assets/teams/person-1.jpg';
+import Person2 from '../../assets/teams/person-2.jpg';
+import Person3 from '../../assets/teams/person-3.jpg';
+import Person4 from '../../assets/teams/person-4.jpg';
+import Person5 from '../../assets/teams/person-5.jpg';
+import Person6 from '../../assets/teams/person-6.jpg';
+import Person7 from '../../assets/teams/person-7.jpg';
+import TeamMember from '../components/TeamMember';
+
+const teamMembersPics = [
+  {
+    memberImg: Person1,
+    memberName: 'Jos Butler',
+  },
+  {
+    memberImg: Person2,
+    memberName: 'Simona Halep',
+  },
+  {
+    memberImg: Person4,
+    memberName: 'Monica',
+  },
+  {
+    memberImg: Person3,
+    memberName: 'Richard Ugo',
+  },
+  {
+    memberImg: Person6,
+    memberName: 'Christina',
+  },
+  {
+    memberImg: Person7,
+    memberName: 'Gabriel Silverio',
+  },
+];
 
 const About = () => {
   // const [bgColor, setBgColor] = useState('#bcbcb4');
@@ -72,7 +107,23 @@ const About = () => {
         />
       </section>
 
-      <AboutScroll />
+      <section className="about-scroll">
+        <AboutScroll />
+      </section>
+
+      <section className="team-section">
+        <h2 className="team-heading">Team</h2>
+
+        <div className="team-img-container">
+          {teamMembersPics.map((teamMember) => (
+            <TeamMember
+              imageSrc={teamMember.memberImg}
+              key={teamMember.memberImg}
+              memberName={teamMember.memberName}
+            />
+          ))}
+        </div>
+      </section>
     </div>
   );
 };

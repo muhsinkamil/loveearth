@@ -14,7 +14,7 @@ function AboutScrollAtom({ offset, isRuler, content }: Props) {
 
   const x = useTransform(
     scrollYProgress,
-    [0, 0.4 + offset * 0.03],
+    [0, 0.2 + offset * 0.03],
     [offset * 100, 0],
   );
 

@@ -9,3 +9,22 @@
     width: 90vw;
   }
 }
+
+.about-scroll {
+  margin-bottom: 15vw;
+}
+
+.team-section {
+  text-transform: uppercase;
+
+  .team-heading {
+    font-size: 4.5vw;
+    margin-bottom: min(2vw, 50px);
+  }
+
+  .team-img-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+}
