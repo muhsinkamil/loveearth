@@ -28,16 +28,17 @@ function AboutScroll() {
 
   return (
     <div
-      className="container"
+      className="about-pg-container"
       style={{
         display: 'flex',
-        // overflowX: 'hidden',
+        overflowX: 'hidden',
       }}
     >
       <div className="left">
         <AnimatePresence exitBeforeEnter>
           <motion.div
             // key={selectedTab ? selectedTab.label : 'empty'}
+            className="services-offered"
             key={content}
             animate={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
@@ -51,14 +52,16 @@ function AboutScroll() {
             }}
           >
             {content}
-            <motion.svg width="1000" height="800">
-              <motion.path
-                d="M0 10 L550 10"
-                style={{
-                  pathLength: scrollYProgress,
-                }}
-              ></motion.path>
-            </motion.svg>
+            <div style={{ overflow: 'hidden' }}>
+              <motion.svg width="800" height="800">
+                <motion.path
+                  d="M0 10 L450 10"
+                  style={{
+                    pathLength: scrollYProgress,
+                  }}
+                ></motion.path>
+              </motion.svg>
+            </div>
           </motion.div>
         </AnimatePresence>
       </div>
@@ -72,11 +75,38 @@ function AboutScroll() {
           {services.map((service, i) => {
             const toInsertRuler = () => i === 4 || i === 8;
             return (
-              <AboutScrollAtom
-                offset={i}
-                isRuler={toInsertRuler()}
-                content={service}
-              />
+              <>
+                {i === 4 && (
+                  <div
+                    style={{
+                      fontSize: ' 4.8vw',
+                      textTransform: 'uppercase',
+                      marginTop: '5vw',
+                    }}
+                    className="scroll-heading"
+                  >
+                    Research
+                  </div>
+                )}
+                {i === 8 && (
+                  <div
+                    style={{
+                      fontSize: ' 4.8vw',
+                      textTransform: 'uppercase',
+                      marginTop: '5vw',
+                    }}
+                    className="scroll-heading"
+                  >
+                    Portrait
+                  </div>
+                )}
+                <AboutScrollAtom
+                  key={i}
+                  offset={i}
+                  isRuler={toInsertRuler()}
+                  content={service}
+                />
+              </>
             );
           })}
         </div>

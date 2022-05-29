@@ -146,11 +146,11 @@ const services = [
   'Wireframing',
   // 'break',
   'copy creation',
-  'market research',
+  'Case design',
   'art direction',
   'interactive design',
   'Immersive design',
-  'Wireframing',
+  'Portrait Picturing',
 ];
 
 export { brandsWorked, services };
