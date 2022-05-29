@@ -3,9 +3,11 @@ import { motion, useTransform, useViewportScroll } from 'framer-motion';
 
 type Props = {
   offset: number;
+  isRuler: boolean;
+  content: string;
 };
 
-function AboutScrollAtom({ offset }: Props) {
+function AboutScrollAtom({ offset, isRuler, content }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useViewportScroll();
   let top = 0;
@@ -23,14 +25,25 @@ function AboutScrollAtom({ offset }: Props) {
 
   return (
     <section ref={ref}>
-      <motion.aside
-        style={{
-          x,
-          fontSize: '4vw',
-        }}
-      >
-        Customer Research
-      </motion.aside>
+      {isRuler ? (
+        <motion.aside
+          style={{
+            x,
+          }}
+          className="hori-ruler"
+        ></motion.aside>
+      ) : (
+        <motion.aside
+          style={{
+            x,
+            fontSize: '3.5vw',
+            textTransform: 'uppercase',
+            lineHeight: '4.5vw',
+          }}
+        >
+          {content}
+        </motion.aside>
+      )}
     </section>
   );
 }

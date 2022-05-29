@@ -2,6 +2,7 @@ import './styles.scss';
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion, useViewportScroll } from 'framer-motion';
 import AboutScrollAtom from './AboutScrollAtom';
+import { services } from '../../translations/brandsWorked';
 
 function AboutScroll() {
   const [content, setContent] = useState('Research');
@@ -11,9 +12,9 @@ function AboutScroll() {
   useEffect(() => {
     const changeContent = () => {
       // console.log(scrollYProgress);
-      if (window.scrollY > 1800) {
-        setContent('Direction');
-      } else if (window.scrollY > 1300) {
+      if (window.scrollY > 1200) {
+        setContent('Portrait');
+      } else if (window.scrollY > 1000) {
         setContent('Research');
       } else {
         setContent('Design');
@@ -21,6 +22,8 @@ function AboutScroll() {
     };
 
     window.addEventListener('scroll', changeContent);
+
+    return () => window.removeEventListener('scroll', changeContent);
   }, []);
 
   return (
@@ -31,45 +34,50 @@ function AboutScroll() {
         // overflowX: 'hidden',
       }}
     >
-      <AnimatePresence exitBeforeEnter>
-        <motion.div
-          className="left"
-          // key={selectedTab ? selectedTab.label : 'empty'}
-          key={content}
-          animate={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 20 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.2 }}
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-          }}
-        >
-          {content}
-          {/* <Line x={scrollYProgress} />
-           */}
-          {/* <motion.svg height="210" width="500">
-            <motion.path d="M10 10 L100 100" />
-          </motion.svg> */}
+      <div className="left">
+        <AnimatePresence exitBeforeEnter>
+          <motion.div
+            // key={selectedTab ? selectedTab.label : 'empty'}
+            key={content}
+            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              fontSize: ' 4.8vw',
+              textTransform: 'uppercase',
+            }}
+          >
+            {content}
+            <motion.svg width="1000" height="800">
+              <motion.path
+                d="M0 10 L550 10"
+                style={{
+                  pathLength: scrollYProgress,
+                }}
+              ></motion.path>
+            </motion.svg>
+          </motion.div>
+        </AnimatePresence>
+      </div>
 
-          <motion.svg width="500" height="500">
-            <motion.path
-              d="M0 10 L500 10"
-              style={{
-                pathLength: scrollYProgress,
-              }}
-            ></motion.path>
-          </motion.svg>
-        </motion.div>
-      </AnimatePresence>
       <div
         className="right"
         style={{ width: '50%', fontSize: '4vw', overflow: 'hidden' }}
       >
         <div className="ruler" />
         <div className="scroll-elements">
-          {[...Array(20).keys()].map((el, i) => {
-            return <AboutScrollAtom offset={i} />;
+          {services.map((service, i) => {
+            const toInsertRuler = () => i === 4 || i === 8;
+            return (
+              <AboutScrollAtom
+                offset={i}
+                isRuler={toInsertRuler()}
+                content={service}
+              />
+            );
           })}
         </div>
       </div>
