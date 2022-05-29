@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Header } from '../components';
+import { Accordion, Header } from '../components';
 import AboutScroll from '../components/AboutScroll';
 import officeImg from '../../assets/officeHappy.jpg';
 
@@ -16,6 +16,7 @@ import Person5 from '../../assets/teams/person-5.jpg';
 import Person6 from '../../assets/teams/person-6.jpg';
 import Person7 from '../../assets/teams/person-7.jpg';
 import TeamMember from '../components/TeamMember';
+import { jobHirings } from '../translations/brandsWorked';
 
 const teamMembersPics = [
   {
@@ -123,6 +124,13 @@ const About = () => {
             />
           ))}
         </div>
+      </section>
+
+      <section className="hiring">
+        <h2 className="hiring-heading">
+          <span className="hvr-underln-anim">Come join our team</span>
+        </h2>
+        <Accordion accContent={jobHirings} />
       </section>
     </div>
   );

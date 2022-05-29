@@ -11,6 +11,14 @@
     top: 0px;
     line-height: 0.8;
     font-weight: 400;
+
+    .services-offered {
+      display: flex;
+      flex-direction: column;
+      font-size: 4vw;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
   }
 
   .right {

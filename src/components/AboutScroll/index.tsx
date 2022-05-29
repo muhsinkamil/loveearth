@@ -44,12 +44,6 @@ function AboutScroll() {
             initial={{ opacity: 0, y: 20 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              fontSize: ' 4.8vw',
-              textTransform: 'uppercase',
-            }}
           >
             {content}
             <div style={{ overflow: 'hidden' }}>

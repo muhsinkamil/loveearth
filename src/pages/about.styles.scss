@@ -19,6 +19,7 @@
 
   .team-heading {
     font-size: 4.5vw;
+    font-weight: 400;
     margin-bottom: min(2vw, 50px);
   }
 
@@ -27,4 +28,11 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
   }
+}
+
+.hiring-heading {
+  font-size: 4.2vw;
+  font-weight: 400;
+  margin-top: min(2vw, 50px);
+  margin-bottom: min(2vw, 50px);
 }

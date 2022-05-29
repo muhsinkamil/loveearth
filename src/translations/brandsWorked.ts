@@ -153,4 +153,38 @@ const services = [
   'Portrait Picturing',
 ];
 
-export { brandsWorked, services };
+const jobHirings = [
+  {
+    accName: 'Wildlife Photography',
+    category: 'Full Time',
+    expandedContent:
+      'We’re looking for a Wildlife photographer\
+       to join our LightHouse team. You’ll lead\
+       the wildlife Photograph team, working closely\
+       with the Creative Director \
+       to capture the world class pictures and to participate in world events.',
+  },
+  {
+    accName: 'Portrait Photography',
+    category: 'Full Time',
+    expandedContent:
+      'We’re looking for Portrait Photographer\
+       to join our LightHouse team. You’ll lead\
+       the Portrait Photograh team and participate in festivals to showcase the\
+       works of LightHouse team. You will work closely with the Creative Director and \
+       produce the wonderful ideas to capture the best moments.',
+  },
+  {
+    accName: 'Editor',
+    category: 'Part Time',
+    expandedContent:
+      'We’re looking for a experienced Editor \
+       to join our LightHouse team. You’ll work\
+       with the editing team and working closely\
+       with the Creative Director and Photograph team to \
+       translate the beatuful identities. You will give life to the wonderful moments captured by Photograph team. \
+       .',
+  },
+];
+
+export { brandsWorked, services, jobHirings };
