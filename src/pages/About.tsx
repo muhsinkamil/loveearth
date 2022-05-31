@@ -12,11 +12,30 @@ import Person1 from '../../assets/teams/person-1.jpg';
 import Person2 from '../../assets/teams/person-2.jpg';
 import Person3 from '../../assets/teams/person-3.jpg';
 import Person4 from '../../assets/teams/person-4.jpg';
-import Person5 from '../../assets/teams/person-5.jpg';
 import Person6 from '../../assets/teams/person-6.jpg';
 import Person7 from '../../assets/teams/person-7.jpg';
+
+import aboutSwiperImg1 from '../../assets/aboutSwiper/aboutSwiper1.jpg';
+import aboutSwiperImg2 from '../../assets/aboutSwiper/aboutSwiper2.jpg';
+import aboutSwiperImg3 from '../../assets/aboutSwiper/aboutSwiper3.jpg';
+import aboutSwiperImg4 from '../../assets/aboutSwiper/aboutSwiper4.jpg';
+import aboutSwiperImg5 from '../../assets/aboutSwiper/aboutSwiper5.jpg';
+import aboutSwiperImg6 from '../../assets/aboutSwiper/aboutSwiper6.jpg';
+import aboutSwiperImg7 from '../../assets/aboutSwiper/aboutSwiper7.jpg';
+
 import TeamMember from '../components/TeamMember';
 import { jobHirings } from '../translations/brandsWorked';
+import SwiperFreeMode from '../components/SwiperFreeMode';
+
+const swiperImages = [
+  aboutSwiperImg1,
+  aboutSwiperImg2,
+  aboutSwiperImg3,
+  aboutSwiperImg4,
+  aboutSwiperImg5,
+  aboutSwiperImg6,
+  aboutSwiperImg7,
+];
 
 const teamMembersPics = [
   {
@@ -131,6 +150,10 @@ const About = () => {
           <span className="hvr-underln-anim">Come join our team</span>
         </h2>
         <Accordion accContent={jobHirings} />
+      </section>
+
+      <section className="about-team-swipe">
+        <SwiperFreeMode slideImages={swiperImages} />
       </section>
     </div>
   );

@@ -1,6 +1,3 @@
-.home-container {
-}
-
 .about-sub {
   font-size: 1.5vw;
   line-height: 1.1;
@@ -45,6 +42,11 @@
     font-weight: 400;
     margin-bottom: 2vw;
   }
+}
+
+.home-team-swipe {
+  margin-top: 10vw;
+  padding-bottom: max(3vw, 100px);
 }
 
 @media only screen and (max-width: 800px) {
