@@ -1,0 +1,18 @@
+.gl-item-container {
+  z-index: 1;
+  height: 100%;
+
+  .gl-item-img-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .gl-item-img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+}
