@@ -9,9 +9,10 @@ type Props = {
     nextPageLabel: string;
     nextPageLink: string;
   };
+  isAboutPage?: boolean;
 };
 
-function Footer({ nextPageProps }: Props) {
+function Footer({ nextPageProps, isAboutPage = false }: Props) {
   return (
     <>
       <div
