@@ -5,6 +5,7 @@ import { ContactForm } from './components';
 import { ContactFormProvider } from './providers/contact';
 import HorizontalAbout from './pages/HorizontalAbout/HorizontalAbout';
 import ContactPage from './pages/Contact';
+import { WorksModalProvider } from './providers/works';
 
 function App() {
   return (
@@ -13,7 +14,9 @@ function App() {
         <BrowserRouter>
           <div className="app-routes">
             <Switch>
-              <Route path="/work" component={Work} />
+              <WorksModalProvider>
+                <Route path="/work" component={Work} />
+              </WorksModalProvider>
               <Route path="/about" component={HorizontalAbout} />
               <Route exact path="/" component={Home} />
             </Switch>

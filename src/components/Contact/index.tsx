@@ -1,25 +1,25 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { unsetBodyOverflow } from '../../helpers';
-import { useContactForm } from '../../providers/contact';
-import FooterIconLine from '../Footer/FooterIconLine';
 import BackDrop from './Backdrop';
-import FormElements from './Form';
 import './styles.scss';
 
-const ContactForm = ({ children }: any) => {
-  const {
-    state: { isContactFormOpen },
-    actions: { closeContactForm },
-  } = useContactForm();
+type Props = {
+  isModalOpen: boolean;
+  handleCloseModal: () => void;
+  title: string;
+  children: any;
+  isDark?: boolean;
+};
 
-  const handleCloseForm = () => {
-    unsetBodyOverflow();
-    closeContactForm();
-  };
-
+const ContactForm = ({
+  children,
+  title,
+  isModalOpen,
+  handleCloseModal,
+  isDark = false,
+}: Props) => {
   return (
     <AnimatePresence>
-      {isContactFormOpen && (
+      {isModalOpen && (
         <BackDrop>
           <motion.div
             key="contact"
@@ -33,14 +33,20 @@ const ContactForm = ({ children }: any) => {
               y: 1000,
               transition: { duration: 0.5, ease: 'easeInOut' },
             }}
+            style={{
+              ...(isDark ? { color: 'white', background: 'black' } : {}),
+            }}
           >
             <button
-              className="close-btn hvr-underln-anim"
-              onClick={handleCloseForm}
+              className={`close-btn hvr-underln-anim ${
+                isDark ? 'hvr-underln-anim-dark' : ''
+              }`}
+              onClick={handleCloseModal}
+              style={{ ...(isDark ? { color: 'white' } : {}) }}
             >
               close
             </button>
-            <div className="contact-head">Contact</div>
+            <div className="contact-head">{title}</div>
             {children}
           </motion.div>
         </BackDrop>

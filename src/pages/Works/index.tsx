@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Header } from '../../components';
+import { ContactForm, Header } from '../../components';
 import withFooter from '../../hoc/footerHOC';
 import withNavBar from '../../hoc/NavHOC';
 import withLoadingScreen from '../../hoc/pageTransition';
@@ -10,36 +10,44 @@ import fGroup from '../../../assets/fGroup.jpg';
 import balloons from '../../../assets/balloons.jpg';
 
 import './styles.scss';
+import { useContactForm } from '../../providers/contact';
+import { useWorksModal } from '../../providers/works';
 
 const data = [
   [
     {
       imageSrc: balloons,
       categories: ['Art', 'Creative direction', 'Portrait'],
+      title: 'Loons',
     },
     {
       imageSrc: womenUnderWater,
       categories: ['Art', 'Group direction', 'Brand featuring'],
+      title: 'wonder women',
     },
   ],
   [
     {
       imageSrc: fGroup,
       categories: ['Group direction', 'Portrait', 'Creative direction'],
+      title: 'Defaced',
     },
     {
       imageSrc: desertImg,
       categories: ['Art', 'Portrait', 'Creative direction'],
+      title: 'Shadows',
     },
   ],
   [
     {
       imageSrc: desertImg,
       categories: ['Art', 'Brand featuring', 'Portrait', 'Group direction'],
+      title: 'Shadows',
     },
     {
       imageSrc: desertImg,
       categories: ['Art', 'Brand featuring', 'Creative direction'],
+      title: 'Shadows',
     },
   ],
   [
@@ -51,10 +59,12 @@ const data = [
         'Group direction',
         'Creative direction',
       ],
+      title: 'Shadows',
     },
     {
       imageSrc: desertImg,
       categories: ['Brand featuring', 'Group direction', 'Creative direction'],
+      title: 'Shadows',
     },
   ],
 ];
@@ -62,12 +72,19 @@ const data = [
 type FilteredDataType = {
   imageSrc: string;
   categories: string[];
+  title: string;
 }[][];
 
 const Work = () => {
   const [selectedFilter, setSelectedFilter] = useState('All work');
   const [isFilterOpen, setFilterOpen] = useState(false);
   const [filteredWorks, setFilteredWorks] = useState(data);
+  const [worksModalTitle, setWorksModalTitle] = useState('');
+
+  const {
+    state: { isWorksModalOpen },
+    actions: { openWorksModal, closeWorksModal },
+  } = useWorksModal();
 
   useEffect(() => {
     const getFilteredWork = () => {
@@ -106,129 +123,145 @@ const Work = () => {
     'Creative direction',
   ];
 
-  return (
-    <motion.div
-      exit={{ translateX: 500 }}
-      transition={{ duration: 400 }}
-      className="std-container"
-      onClick={() => {
-        if (isFilterOpen) setFilterOpen(false);
-      }}
-      style={{ backgroundColor: '#f0f0f0' }}
-    >
-      <Header
-        contents={['WORK']}
-        customContainerStyles={{
-          paddingTop: '3vw',
-          fontSize: '6vw',
-          lineHeight: '5vw',
-        }}
-        // @TODO: check styles
-        // customStyles={{ fontSize: "6.5vw" }}
-      />
+  const handleWorksClick = (title: string) => {
+    setWorksModalTitle(title);
+    openWorksModal();
+  };
 
-      <div className="filter-container">
-        <span className="filter">Filter: </span>
-        <div
-          className="selected-filter-container"
-          onClick={() => setFilterOpen(!isFilterOpen)}
-        >
-          <div className="selected-filter-container-inner">
-            <span className="work-category">
-              <span className="hvr-underln-anim">{selectedFilter}</span>
-            </span>
-            <span className="work-plus">+</span>
-          </div>
+  return (
+    <>
+      <motion.div
+        exit={{ translateX: 500 }}
+        transition={{ duration: 400 }}
+        className="std-container"
+        onClick={() => {
+          if (isFilterOpen) setFilterOpen(false);
+        }}
+        style={{ backgroundColor: '#f0f0f0' }}
+      >
+        <Header
+          contents={['WORK']}
+          customContainerStyles={{
+            paddingTop: '3vw',
+            fontSize: '6vw',
+            lineHeight: '5vw',
+          }}
+          // @TODO: check styles
+          // customStyles={{ fontSize: "6.5vw" }}
+        />
+
+        <div className="filter-container">
+          <span className="filter">Filter: </span>
           <div
-            className="filter-list"
-            style={!isFilterOpen ? { display: 'none' } : {}}
+            className="selected-filter-container"
+            onClick={() => setFilterOpen(!isFilterOpen)}
           >
-            <>
-              <div
-                className="filter-option"
-                onClick={() => setSelectedFilter('All work')}
-              >
-                All work
-              </div>
-              {allOptions.map((option, i) => {
-                return (
-                  <div
-                    className="filter-option"
-                    onClick={() => setSelectedFilter(option)}
-                    key={i}
-                  >
-                    {option}
-                  </div>
-                );
-              })}
-            </>
+            <div className="selected-filter-container-inner">
+              <span className="work-category">
+                <span className="hvr-underln-anim">{selectedFilter}</span>
+              </span>
+              <span className="work-plus">+</span>
+            </div>
+            <div
+              className="filter-list"
+              style={!isFilterOpen ? { display: 'none' } : {}}
+            >
+              <>
+                <div
+                  className="filter-option"
+                  onClick={() => setSelectedFilter('All work')}
+                >
+                  All work
+                </div>
+                {allOptions.map((option, i) => {
+                  return (
+                    <div
+                      className="filter-option"
+                      onClick={() => setSelectedFilter(option)}
+                      key={i}
+                    >
+                      {option}
+                    </div>
+                  );
+                })}
+              </>
+            </div>
           </div>
         </div>
-      </div>
 
-      {filteredWorks.map((batch, i) => {
-        return (
-          <Fragment key={i}>
-            <motion.div
-              className="hori-separator"
-              initial={{
-                width: 0,
-              }}
-              animate={{
-                transformOrigin: 'center center',
-                width: '100%',
-                transition: {
-                  duration: 0.8,
-                },
-              }}
-            ></motion.div>
-            <div className="works-grid-container">
-              {batch.map((workSrc, index) => {
-                const batchClassName =
-                  index % 2 === 0 ? 'work-first-grid' : 'work-second-grid';
+        {filteredWorks.map((batch, i) => {
+          return (
+            <Fragment key={i}>
+              <motion.div
+                className="hori-separator"
+                initial={{
+                  width: 0,
+                }}
+                animate={{
+                  transformOrigin: 'center center',
+                  width: '100%',
+                  transition: {
+                    duration: 0.8,
+                  },
+                }}
+              ></motion.div>
+              <div className="works-grid-container">
+                {batch.map((workSrc, index) => {
+                  const batchClassName =
+                    index % 2 === 0 ? 'work-first-grid' : 'work-second-grid';
 
-                return (
-                  <div
-                    className={`works-image-container ${batchClassName}`}
-                    key={index}
-                  >
-                    {/* <img
+                  return (
+                    <div
+                      className={`works-image-container ${batchClassName}`}
+                      key={index}
+                    >
+                      {/* <img
                       src={workSrc.imageSrc}
                       alt={`${workSrc.imageSrc}-img`}
                       className="works-grid-image"
                     /> */}
-                    <div style={{ overflow: 'hidden' }}>
-                      <motion.div
-                        className="works-grid-image"
-                        style={{
-                          backgroundImage: `url(${workSrc.imageSrc})`,
-                        }}
-                        initial={{ scale: 1.2, rotate: '10deg' }}
-                        animate={{
-                          scale: 1,
-                          rotate: '0deg',
-                          transition: { duration: 0.8 },
-                        }}
-                      />
+                      <div style={{ overflow: 'hidden' }}>
+                        <motion.div
+                          className="works-grid-image"
+                          style={{
+                            backgroundImage: `url(${workSrc.imageSrc})`,
+                          }}
+                          initial={{ scale: 1.2, rotate: '10deg' }}
+                          animate={{
+                            scale: 1,
+                            rotate: '0deg',
+                            transition: { duration: 0.8 },
+                          }}
+                          onClick={() => handleWorksClick(workSrc.title)}
+                        />
+                      </div>
+                      <div className="categories">
+                        {workSrc.categories.map((category, i) => (
+                          <span className="category" key={i}>
+                            {category}{' '}
+                            {workSrc.categories.length - 1 !== i && (
+                              <span className="center-dot">.</span>
+                            )}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                    <div className="categories">
-                      {workSrc.categories.map((category, i) => (
-                        <span className="category" key={i}>
-                          {category}{' '}
-                          {workSrc.categories.length - 1 !== i && (
-                            <span className="center-dot">.</span>
-                          )}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </Fragment>
-        );
-      })}
-    </motion.div>
+                  );
+                })}
+              </div>
+            </Fragment>
+          );
+        })}
+      </motion.div>
+      <ContactForm
+        isModalOpen={isWorksModalOpen}
+        handleCloseModal={closeWorksModal}
+        title={worksModalTitle}
+        isDark
+      >
+        {worksModalTitle}
+      </ContactForm>
+    </>
   );
 };
 

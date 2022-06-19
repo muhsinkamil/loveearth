@@ -21,7 +21,11 @@ function Footer({ nextPageProps, isAboutPage = false }: Props) {
     justifyContent: 'center',
   };
   if (isAboutPage) {
-    customStyles = { display: 'flex', flexDirection: 'column' };
+    customStyles = {
+      display: 'flex',
+      flexDirection: 'column',
+      paddingRight: '50vw',
+    };
   } else {
     containerStyles = { ...containerStyles, minHeight: '100vh' };
   }

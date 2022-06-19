@@ -26,3 +26,11 @@
     transform-origin: bottom left;
   }
 }
+
+.hvr-underln-anim-dark {
+  @extend .hvr-underln-anim;
+
+  &::after {
+    background-color: rgb(250, 250, 250);
+  }
+}

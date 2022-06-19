@@ -1,12 +1,28 @@
 import { ContactForm } from '../../components';
 import FormElements from '../../components/Contact/Form';
 import FooterIconLine from '../../components/Footer/FooterIconLine';
+import { unsetBodyOverflow } from '../../helpers';
+import { useContactForm } from '../../providers/contact';
 
 import './styles.scss';
 
 const ContactPage = () => {
+  const {
+    state: { isContactFormOpen },
+    actions: { closeContactForm },
+  } = useContactForm();
+
+  const handleCloseForm = () => {
+    unsetBodyOverflow();
+    closeContactForm();
+  };
+
   return (
-    <ContactForm>
+    <ContactForm
+      isModalOpen={isContactFormOpen}
+      handleCloseModal={handleCloseForm}
+      title="Contact"
+    >
       <FormElements />
       <div className="contact-desc">
         We love amazing moments. We don't know want you experience the same.
