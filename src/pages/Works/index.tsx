@@ -10,9 +10,15 @@ import fGroup from '../../../assets/fGroup.jpg';
 import balloons from '../../../assets/balloons.jpg';
 import { useWorksModal } from '../../providers/works';
 import SwiperFreeMode from '../../components/SwiperFreeMode';
+
 import Loons1 from '/assets/loons/loons1.jpg';
 import Loons2 from '/assets/loons/loons2.jpg';
 import Loons3 from '/assets/loons/loons3.jpg';
+
+import water1 from '/assets/womenUnderWater/water1.jpg';
+import water2 from '/assets/womenUnderWater/water2.jpg';
+import water3 from '/assets/womenUnderWater/water3.jpg';
+import water4 from '/assets/womenUnderWater/water4.jpg';
 
 import './styles.scss';
 import { hideBodyOverflow, unsetBodyOverflow } from '../../helpers';
@@ -36,7 +42,7 @@ const data: DataType[][] = [
       imageSrc: womenUnderWater,
       categories: ['Art', 'Group direction', 'Brand featuring'],
       title: 'wonder women',
-      swiperImages: [Loons1, Loons2, balloons, Loons3],
+      swiperImages: [water1, water2, womenUnderWater, water3, water4],
     },
   ],
   [
