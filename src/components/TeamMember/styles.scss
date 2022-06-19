@@ -2,14 +2,14 @@
   //   background-color: red;
   border-top: 1px solid black;
   //   border-bottom: 1px solid black;
-  padding: 25px 0 40px 0;
+  padding: 25px 0 0 0;
 
   .img-container {
     overflow: hidden;
 
     .team-img {
-      height: 25vw;
-      width: 80%;
+      height: 28vh;
+      width: 100%;
       object-fit: cover;
 
       clip-path: ellipse(100% 100% at 50% 50%);

@@ -1,5 +1,5 @@
 import './Navbar.scss';
-import { Link } from 'react-router-dom';
+import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useContactForm } from '../../providers/contact';
 import { hideBodyOverflow } from '../../helpers';
@@ -8,9 +8,9 @@ type Props = {
   leftLogo: string;
   rightItems: { item: string; navigateTo?: string }[];
   bg: string;
-};
+} & RouteComponentProps;
 
-const Navbar = ({ leftLogo, rightItems, bg }: Props) => {
+const Navbar = ({ leftLogo, rightItems, bg, match }: Props) => {
   const [fixedPos, setFixedPos] = useState(false);
 
   const {
@@ -28,7 +28,11 @@ const Navbar = ({ leftLogo, rightItems, bg }: Props) => {
       else setFixedPos(false);
     };
 
-    window.addEventListener('scroll', fixNavBar);
+    if (match.path === '/about') {
+      setFixedPos(true);
+    } else {
+      window.addEventListener('scroll', fixNavBar);
+    }
   }, []);
 
   return (
@@ -72,4 +76,4 @@ const Navbar = ({ leftLogo, rightItems, bg }: Props) => {
   );
 };
 
-export default Navbar;
+export default withRouter(Navbar);

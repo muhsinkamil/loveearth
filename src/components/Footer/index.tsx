@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
 import Button from '../Button';
 import Header from '../Header';
 import FooterIconLine from './FooterIconLine';
@@ -13,18 +13,22 @@ type Props = {
 };
 
 function Footer({ nextPageProps, isAboutPage = false }: Props) {
+  let customStyles = {};
+  let containerStyles: any = {
+    paddingTop: '6vw',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+  };
+  if (isAboutPage) {
+    customStyles = { display: 'flex', flexDirection: 'column' };
+  } else {
+    containerStyles = { ...containerStyles, minHeight: '100vh' };
+  }
+
   return (
-    <>
-      <div
-        className="std-container"
-        style={{
-          paddingTop: '6vw',
-          minHeight: '100vh',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-        }}
-      >
+    <div style={customStyles}>
+      <div className="std-container" style={containerStyles}>
         <div style={{ paddingBottom: '15px' }}>Next page</div>
         <h3>
           <Link
@@ -96,7 +100,7 @@ function Footer({ nextPageProps, isAboutPage = false }: Props) {
         <div className="full-ftr-keyline" />
         <FooterIconLine />
       </div>
-    </>
+    </div>
   );
 }
 
