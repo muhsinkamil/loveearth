@@ -45,27 +45,29 @@ const Home = () => {
         transition={{ duration: 400 }}
         className="std-container"
       >
-        <Header
-          contents={[
-            'A',
-            'DIGITAL',
-            'DESIGN',
-            'STUDIO',
-            'DRIVEN',
-            'BY',
-            'RESEARCH',
-            '&',
-            'STRATEGY',
-          ]}
-          customContainerStyles={{
-            margin: '0 5px',
-            paddingTop: '7vw',
-            fontSize: '6vw',
-            lineHeight: '5vw',
-          }}
-          // @TODO: check styles
-          // customStyles={{ fontSize: "6.5vw" }}
-        />
+        <section style={{ marginBottom: '5vh' }}>
+          <Header
+            contents={[
+              'A',
+              'DIGITAL',
+              'DESIGN',
+              'STUDIO',
+              'DRIVEN',
+              'BY',
+              'RESEARCH',
+              '&',
+              'STRATEGY',
+            ]}
+            customContainerStyles={{
+              margin: '0 5px',
+              paddingTop: '7vw',
+              fontSize: '6vw',
+              lineHeight: '5vw',
+            }}
+            // @TODO: check styles
+            // customStyles={{ fontSize: "6.5vw" }}
+          />
+        </section>
 
         <section className="works-home-section">
           <Works />

@@ -34,6 +34,21 @@ import nature2 from '/assets/nature/nature2.jpg';
 import nature3 from '/assets/nature/nature3.jpg';
 import nature4 from '/assets/nature/nature4.jpg';
 
+import city1 from '/assets/city/city1.jpg';
+import city2 from '/assets/city/city2.jpg';
+import city3 from '/assets/city/city3.jpg';
+import city4 from '/assets/city/city4.jpg';
+
+import palace1 from '/assets/palace/palace1.jpg';
+import palace2 from '/assets/palace/palace2.jpg';
+import palace3 from '/assets/palace/palace3.jpg';
+import palace4 from '/assets/palace/palace4.jpg';
+
+import menF1 from '/assets/menFashion/menF1.jpg';
+import menF2 from '/assets/menFashion/menF2.jpg';
+import menF3 from '/assets/menFashion/menF3.jpg';
+import menF4 from '/assets/menFashion/menF4.jpg';
+
 import './styles.scss';
 import { hideBodyOverflow, unsetBodyOverflow } from '../../helpers';
 
@@ -48,7 +63,7 @@ const data: DataType[][] = [
   [
     {
       imageSrc: balloons,
-      categories: ['Art', 'Creative direction', 'Portrait'],
+      categories: ['Art', 'Creative direction', 'Outdoor direction'],
       title: 'Loons',
       swiperImages: [Loons1, Loons2, balloons, Loons3],
     },
@@ -62,48 +77,57 @@ const data: DataType[][] = [
   [
     {
       imageSrc: fGroup,
-      categories: ['Group direction', 'Portrait', 'Creative direction'],
+      categories: [
+        'Group direction',
+        'Outdoor direction',
+        'Creative direction',
+      ],
       title: 'Defaced',
       swiperImages: [grp1, fGroup, grp2, grp3],
     },
     {
       imageSrc: nature4,
-      categories: ['Art', 'Portrait', 'Creative direction'],
-      title: 'Shadows',
+      categories: ['Art', 'Outdoor direction', 'Creative direction'],
+      title: 'Peace',
       swiperImages: [nature1, nature2, nature3, nature4],
     },
   ],
   [
     {
       imageSrc: portrait4,
-      categories: ['Art', 'Brand featuring', 'Portrait', 'Group direction'],
-      title: 'Shadows',
+      categories: [
+        'Art',
+        'Brand featuring',
+        'Outdoor direction',
+        'Group direction',
+      ],
+      title: 'Candid / portrait',
       swiperImages: [portrait4, portrait1, portrait2, portrait3],
     },
     {
-      imageSrc: desertImg,
+      imageSrc: city2,
       categories: ['Art', 'Brand featuring', 'Creative direction'],
-      title: 'Shadows',
-      swiperImages: [Loons1, Loons2, balloons, Loons3],
+      title: 'City view',
+      swiperImages: [city1, city2, city3, city4],
     },
   ],
   [
     {
-      imageSrc: desertImg,
+      imageSrc: palace3,
       categories: [
         'Art',
         'Brand featuring',
         'Group direction',
         'Creative direction',
       ],
-      title: 'Shadows',
-      swiperImages: [Loons1, Loons2, balloons, Loons3],
+      title: 'Palace',
+      swiperImages: [palace1, palace2, palace3, palace4],
     },
     {
-      imageSrc: desertImg,
+      imageSrc: menF1,
       categories: ['Brand featuring', 'Group direction', 'Creative direction'],
       title: 'Shadows',
-      swiperImages: [Loons1, Loons2, balloons, Loons3],
+      swiperImages: [menF1, menF2, menF3, menF4],
     },
   ],
 ];
@@ -150,9 +174,9 @@ const Work = () => {
 
   const allOptions = [
     'Art',
+    'Outdoor direction',
     'Brand featuring',
     'Group direction',
-    'Portrait',
     'Creative direction',
   ];
 
