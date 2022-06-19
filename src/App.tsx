@@ -3,6 +3,7 @@ import { About, Home, Work } from './pages';
 import './App.scss';
 import { ContactForm } from './components';
 import { ContactFormProvider } from './providers/contact';
+import HorizontalAbout from './pages/HorizontalAbout/HorizontalAbout';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
           <div className="app-routes">
             <Switch>
               <Route path="/work" component={Work} />
-              <Route path="/about" component={About} />
+              <Route path="/about" component={HorizontalAbout} />
               <Route exact path="/" component={Home} />
             </Switch>
           </div>

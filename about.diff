@@ -1,0 +1,233 @@
+diff --git a/src/App.tsx b/src/App.tsx
+index fb4bfa8..8e48b59 100644
+--- a/src/App.tsx
++++ b/src/App.tsx
+@@ -3,6 +3,7 @@ import { About, Home, Work } from './pages';
+ import './App.scss';
+ import { ContactForm } from './components';
+ import { ContactFormProvider } from './providers/contact';
++import HorizontalAbout from './pages/HorizontalAbout/HorizontalAbout';
+ 
+ function App() {
+   return (
+@@ -12,7 +13,7 @@ function App() {
+           <div className="app-routes">
+             <Switch>
+               <Route path="/work" component={Work} />
+-              <Route path="/about" component={About} />
++              <Route path="/about" component={HorizontalAbout} />
+               <Route exact path="/" component={Home} />
+             </Switch>
+           </div>
+diff --git a/src/components/Footer/index.tsx b/src/components/Footer/index.tsx
+index 7380706..6a36beb 100644
+--- a/src/components/Footer/index.tsx
++++ b/src/components/Footer/index.tsx
+@@ -9,9 +9,10 @@ type Props = {
+     nextPageLabel: string;
+     nextPageLink: string;
+   };
++  isAboutPage?: boolean;
+ };
+ 
+-function Footer({ nextPageProps }: Props) {
++function Footer({ nextPageProps, isAboutPage = false }: Props) {
+   return (
+     <>
+       <div
+@@ -90,11 +91,28 @@ function Footer({ nextPageProps }: Props) {
+             </div>
+           </div>
+         </div>
++        {isAboutPage && (
++          <>
++            <div className="full-ftr-keyline" />
++            <FooterIconLine />
++          </>
++        )}
+       </div>
+-      <div className="std-container">
+-        <div className="full-ftr-keyline" />
+-        <FooterIconLine />
+-      </div>
++      {isAboutPage && (
++        <div
++          style={{
++            width: '50vw',
++            height: '100vh',
++            marginLeft: '200px',
++          }}
++        ></div>
++      )}
++      {!isAboutPage && (
++        <div className="std-container">
++          <div className="full-ftr-keyline" />
++          <FooterIconLine />
++        </div>
++      )}
+     </>
+   );
+ }
+diff --git a/src/components/Navbar/index.tsx b/src/components/Navbar/index.tsx
+index 3fca6ca..797255d 100644
+--- a/src/components/Navbar/index.tsx
++++ b/src/components/Navbar/index.tsx
+@@ -1,5 +1,5 @@
+ import './Navbar.scss';
+-import { Link } from 'react-router-dom';
++import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
+ import { useState, useEffect } from 'react';
+ import { useContactForm } from '../../providers/contact';
+ import { hideBodyOverflow } from '../../helpers';
+@@ -8,7 +8,7 @@ type Props = {
+   leftLogo: string;
+   rightItems: { item: string; navigateTo?: string }[];
+   bg: string;
+-};
++} & RouteComponentProps;
+ 
+ const Navbar = ({ leftLogo, rightItems, bg }: Props) => {
+   const [fixedPos, setFixedPos] = useState(false);
+@@ -28,7 +28,13 @@ const Navbar = ({ leftLogo, rightItems, bg }: Props) => {
+       else setFixedPos(false);
+     };
+ 
+-    window.addEventListener('scroll', fixNavBar);
++    if (location.pathname === '/about') {
++      setFixedPos(true);
++    } else {
++      window.addEventListener('scroll', fixNavBar);
++    }
++
++    return () => window.removeEventListener('scroll', fixNavBar);
+   }, []);
+ 
+   return (
+@@ -72,4 +78,4 @@ const Navbar = ({ leftLogo, rightItems, bg }: Props) => {
+   );
+ };
+ 
+-export default Navbar;
++export default withRouter(Navbar);
+diff --git a/src/components/SwiperFreeMode/styles.scss b/src/components/SwiperFreeMode/styles.scss
+index 746d7ef..4fceb92 100644
+--- a/src/components/SwiperFreeMode/styles.scss
++++ b/src/components/SwiperFreeMode/styles.scss
+@@ -1,41 +1,43 @@
+-.swiper {
+-  width: 100%;
+-  height: 100%;
+-  cursor: grab;
+-}
++.home-team-swipe {
++  .swiper {
++    width: 100%;
++    height: 100%;
++    cursor: grab;
++  }
+ 
+-.swiper-slide {
+-  text-align: center;
+-  font-size: 18px;
+-  background: #fff;
++  .swiper-slide {
++    text-align: center;
++    background: #fff;
+ 
+-  height: max(20vw, 400px);
+-  // width: max(20vw, 500px);
++    height: max(20vw, 500px);
+ 
+-  /* Center slide text vertically */
+-  display: -webkit-box;
+-  display: -ms-flexbox;
+-  display: -webkit-flex;
+-  display: flex;
+-  -webkit-box-pack: center;
+-  -ms-flex-pack: center;
+-  -webkit-justify-content: center;
+-  justify-content: center;
+-  -webkit-box-align: center;
+-  -ms-flex-align: center;
+-  -webkit-align-items: center;
+-  align-items: center;
+-}
++    /* Center slide text vertically */
++    display: -webkit-box;
++    display: -ms-flexbox;
++    display: -webkit-flex;
++    display: flex;
++    -webkit-box-pack: center;
++    -ms-flex-pack: center;
++    -webkit-justify-content: center;
++    justify-content: center;
++    -webkit-box-align: center;
++    -ms-flex-align: center;
++    -webkit-align-items: center;
++    align-items: center;
++  }
+ 
+-.swiper-slide img {
+-  display: block;
+-  width: 100%;
+-  height: 100%;
+-  object-fit: cover;
++  .swiper-slide img {
++    display: block;
++    width: 100%;
++    height: 100%;
++    object-fit: cover;
++  }
+ }
+ 
+ @media only screen and (max-width: 1000px) {
+-  .swiper-slide {
+-    height: 50vw;
++  .home-team-swipe {
++    .swiper-slide {
++      height: max(20vw, 300px);
++    }
+   }
+ }
+diff --git a/src/components/TeamMember/index.tsx b/src/components/TeamMember/index.tsx
+index 9aeee07..26ed58a 100644
+--- a/src/components/TeamMember/index.tsx
++++ b/src/components/TeamMember/index.tsx
+@@ -16,11 +16,9 @@ function TeamMember({ imageSrc, memberName }: Props) {
+           className="team-img"
+           initial={{
+             scale: 1.5,
+-            rotate: '10deg',
+           }}
+           whileInView={{
+             scale: 1,
+-            rotate: '0deg',
+           }}
+           transition={{
+             duration: 0.8,
+diff --git a/src/components/TeamMember/styles.scss b/src/components/TeamMember/styles.scss
+index cf62719..e6490f2 100644
+--- a/src/components/TeamMember/styles.scss
++++ b/src/components/TeamMember/styles.scss
+@@ -8,7 +8,7 @@
+     overflow: hidden;
+ 
+     .team-img {
+-      height: 25vw;
++      height: max(25vh, 200px);
+       width: 80%;
+       object-fit: cover;
+ 
+diff --git a/src/pages/Home.tsx b/src/pages/Home.tsx
+index 6b9cb64..95f0f72 100644
+--- a/src/pages/Home.tsx
++++ b/src/pages/Home.tsx
+@@ -35,7 +35,7 @@ const Home = () => {
+   const width = useTransform(
+     scrollYProgress,
+     [0, 0.8],
+-    [400, window.innerWidth + window.innerWidth / 1.75],
++    [400, window.innerWidth + window.innerWidth],
+   );
+ 
+   return (
