@@ -20,6 +20,10 @@ import water2 from '/assets/womenUnderWater/water2.jpg';
 import water3 from '/assets/womenUnderWater/water3.jpg';
 import water4 from '/assets/womenUnderWater/water4.jpg';
 
+import grp1 from '/assets/fGroup/grp1.jpg';
+import grp2 from '/assets/fGroup/grp2.jpg';
+import grp3 from '/assets/fGroup/grp3.jpg';
+
 import './styles.scss';
 import { hideBodyOverflow, unsetBodyOverflow } from '../../helpers';
 
@@ -50,7 +54,7 @@ const data: DataType[][] = [
       imageSrc: fGroup,
       categories: ['Group direction', 'Portrait', 'Creative direction'],
       title: 'Defaced',
-      swiperImages: [Loons1, Loons2, balloons, Loons3],
+      swiperImages: [grp1, fGroup, grp2, grp3],
     },
     {
       imageSrc: desertImg,
