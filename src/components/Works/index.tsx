@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import desertImg from '../../../assets/desertImg.jpg';
+import portraitImg from '../../../assets/portraitPics/portrait4.jpg';
 import womenUnderWater from '../../../assets/womenUnderWater.jpg';
 import fGroup from '../../../assets/fGroup.jpg';
 import balloons from '../../../assets/balloons.jpg';
@@ -9,7 +9,7 @@ import './styles.scss';
 function Works() {
   return (
     <div className="works-container">
-      {[desertImg, womenUnderWater, fGroup, balloons].map((imageSrc, i) => {
+      {[portraitImg, womenUnderWater, fGroup, balloons].map((imageSrc, i) => {
         return (
           <div className="img-container" key={i}>
             <motion.img

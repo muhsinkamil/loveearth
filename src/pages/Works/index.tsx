@@ -24,6 +24,11 @@ import grp1 from '/assets/fGroup/grp1.jpg';
 import grp2 from '/assets/fGroup/grp2.jpg';
 import grp3 from '/assets/fGroup/grp3.jpg';
 
+import portrait1 from '/assets/portraitPics/portrait1.jpg';
+import portrait2 from '/assets/portraitPics/portrait2.jpg';
+import portrait3 from '/assets/portraitPics/portrait3.jpg';
+import portrait4 from '/assets/portraitPics/portrait4.jpg';
+
 import './styles.scss';
 import { hideBodyOverflow, unsetBodyOverflow } from '../../helpers';
 
@@ -65,10 +70,10 @@ const data: DataType[][] = [
   ],
   [
     {
-      imageSrc: desertImg,
+      imageSrc: portrait4,
       categories: ['Art', 'Brand featuring', 'Portrait', 'Group direction'],
       title: 'Shadows',
-      swiperImages: [Loons1, Loons2, balloons, Loons3],
+      swiperImages: [portrait4, portrait1, portrait2, portrait3],
     },
     {
       imageSrc: desertImg,
