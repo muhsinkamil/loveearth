@@ -13,9 +13,15 @@ import { FreeMode } from 'swiper';
 
 type Props = {
   slideImages: string[];
+  customStyles?: any;
 };
 
-function SwiperFreeMode({ slideImages }: Props) {
+function SwiperFreeMode({
+  slideImages,
+  customStyles = {
+    height: 'max(20vw, 400px)',
+  },
+}: Props) {
   return (
     <>
       <Swiper
@@ -25,10 +31,10 @@ function SwiperFreeMode({ slideImages }: Props) {
         loop={true}
         loopFillGroupWithBlank={true}
         modules={[FreeMode]}
-        className="mySwiper"
+        className="mySwiper-horizontal"
       >
         {slideImages.map((slide, i) => (
-          <SwiperSlide key={i}>
+          <SwiperSlide key={i} style={customStyles}>
             <img src={slide} alt={slide} />
           </SwiperSlide>
         ))}

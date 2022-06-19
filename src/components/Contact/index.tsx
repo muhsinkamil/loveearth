@@ -8,6 +8,7 @@ type Props = {
   title: string;
   children: any;
   isDark?: boolean;
+  isGridView?: boolean;
 };
 
 const ContactForm = ({
@@ -16,6 +17,7 @@ const ContactForm = ({
   isModalOpen,
   handleCloseModal,
   isDark = false,
+  isGridView = true,
 }: Props) => {
   return (
     <AnimatePresence>
@@ -35,6 +37,12 @@ const ContactForm = ({
             }}
             style={{
               ...(isDark ? { color: 'white', background: 'black' } : {}),
+              ...(isGridView
+                ? {
+                    display: 'grid',
+                    gridTemplateColumns: '50% 50%',
+                  }
+                : {}),
             }}
           >
             <button

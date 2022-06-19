@@ -27,6 +27,7 @@ function SwiperVerticalMode({ slideImages }: Props) {
         modules={[FreeMode]}
         className="mySwiper"
         direction="vertical"
+        style={{ height: '80vh' }}
       >
         {slideImages.map((slide, i) => (
           <SwiperSlide key={i}>

@@ -8,22 +8,35 @@ import desertImg from '../../../assets/desertImg.jpg';
 import womenUnderWater from '../../../assets/womenUnderWater.jpg';
 import fGroup from '../../../assets/fGroup.jpg';
 import balloons from '../../../assets/balloons.jpg';
+import { useWorksModal } from '../../providers/works';
+import SwiperFreeMode from '../../components/SwiperFreeMode';
+import Loons1 from '/assets/loons/loons1.jpg';
+import Loons2 from '/assets/loons/loons2.jpg';
+import Loons3 from '/assets/loons/loons3.jpg';
 
 import './styles.scss';
-import { useContactForm } from '../../providers/contact';
-import { useWorksModal } from '../../providers/works';
+import { hideBodyOverflow, unsetBodyOverflow } from '../../helpers';
 
-const data = [
+interface DataType {
+  imageSrc: string;
+  categories: string[];
+  title: string;
+  swiperImages: string[];
+}
+
+const data: DataType[][] = [
   [
     {
       imageSrc: balloons,
       categories: ['Art', 'Creative direction', 'Portrait'],
       title: 'Loons',
+      swiperImages: [Loons1, Loons2, balloons, Loons3],
     },
     {
       imageSrc: womenUnderWater,
       categories: ['Art', 'Group direction', 'Brand featuring'],
       title: 'wonder women',
+      swiperImages: [Loons1, Loons2, balloons, Loons3],
     },
   ],
   [
@@ -31,11 +44,13 @@ const data = [
       imageSrc: fGroup,
       categories: ['Group direction', 'Portrait', 'Creative direction'],
       title: 'Defaced',
+      swiperImages: [Loons1, Loons2, balloons, Loons3],
     },
     {
       imageSrc: desertImg,
       categories: ['Art', 'Portrait', 'Creative direction'],
       title: 'Shadows',
+      swiperImages: [Loons1, Loons2, balloons, Loons3],
     },
   ],
   [
@@ -43,11 +58,13 @@ const data = [
       imageSrc: desertImg,
       categories: ['Art', 'Brand featuring', 'Portrait', 'Group direction'],
       title: 'Shadows',
+      swiperImages: [Loons1, Loons2, balloons, Loons3],
     },
     {
       imageSrc: desertImg,
       categories: ['Art', 'Brand featuring', 'Creative direction'],
       title: 'Shadows',
+      swiperImages: [Loons1, Loons2, balloons, Loons3],
     },
   ],
   [
@@ -60,26 +77,22 @@ const data = [
         'Creative direction',
       ],
       title: 'Shadows',
+      swiperImages: [Loons1, Loons2, balloons, Loons3],
     },
     {
       imageSrc: desertImg,
       categories: ['Brand featuring', 'Group direction', 'Creative direction'],
       title: 'Shadows',
+      swiperImages: [Loons1, Loons2, balloons, Loons3],
     },
   ],
 ];
-
-type FilteredDataType = {
-  imageSrc: string;
-  categories: string[];
-  title: string;
-}[][];
 
 const Work = () => {
   const [selectedFilter, setSelectedFilter] = useState('All work');
   const [isFilterOpen, setFilterOpen] = useState(false);
   const [filteredWorks, setFilteredWorks] = useState(data);
-  const [worksModalTitle, setWorksModalTitle] = useState('');
+  const [selectedWork, setSelectedWork] = useState<DataType>(data[0][0]);
 
   const {
     state: { isWorksModalOpen },
@@ -93,7 +106,7 @@ const Work = () => {
         return;
       }
 
-      const filteredData: FilteredDataType = [];
+      const filteredData: DataType[][] = [];
 
       data.forEach((batch) => {
         batch.forEach((work) => {
@@ -123,9 +136,15 @@ const Work = () => {
     'Creative direction',
   ];
 
-  const handleWorksClick = (title: string) => {
-    setWorksModalTitle(title);
+  const handleWorksClick = (work: DataType) => {
+    hideBodyOverflow();
+    setSelectedWork(work);
     openWorksModal();
+  };
+
+  const handleCloseModal = () => {
+    unsetBodyOverflow();
+    closeWorksModal();
   };
 
   return (
@@ -232,7 +251,7 @@ const Work = () => {
                             rotate: '0deg',
                             transition: { duration: 0.8 },
                           }}
-                          onClick={() => handleWorksClick(workSrc.title)}
+                          onClick={() => handleWorksClick(workSrc)}
                         />
                       </div>
                       <div className="categories">
@@ -255,11 +274,14 @@ const Work = () => {
       </motion.div>
       <ContactForm
         isModalOpen={isWorksModalOpen}
-        handleCloseModal={closeWorksModal}
-        title={worksModalTitle}
+        handleCloseModal={handleCloseModal}
+        title={selectedWork.title}
         isDark
+        isGridView={false}
       >
-        {worksModalTitle}
+        <section style={{ padding: '10vh 0' }}>
+          <SwiperFreeMode slideImages={selectedWork.swiperImages} />
+        </section>
       </ContactForm>
     </>
   );
