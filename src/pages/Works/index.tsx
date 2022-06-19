@@ -29,6 +29,11 @@ import portrait2 from '/assets/portraitPics/portrait2.jpg';
 import portrait3 from '/assets/portraitPics/portrait3.jpg';
 import portrait4 from '/assets/portraitPics/portrait4.jpg';
 
+import nature1 from '/assets/nature/nature1.jpg';
+import nature2 from '/assets/nature/nature2.jpg';
+import nature3 from '/assets/nature/nature3.jpg';
+import nature4 from '/assets/nature/nature4.jpg';
+
 import './styles.scss';
 import { hideBodyOverflow, unsetBodyOverflow } from '../../helpers';
 
@@ -62,10 +67,10 @@ const data: DataType[][] = [
       swiperImages: [grp1, fGroup, grp2, grp3],
     },
     {
-      imageSrc: desertImg,
+      imageSrc: nature4,
       categories: ['Art', 'Portrait', 'Creative direction'],
       title: 'Shadows',
-      swiperImages: [Loons1, Loons2, balloons, Loons3],
+      swiperImages: [nature1, nature2, nature3, nature4],
     },
   ],
   [
