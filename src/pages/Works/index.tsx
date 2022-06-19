@@ -5,28 +5,31 @@ import withFooter from '../../hoc/footerHOC';
 import withNavBar from '../../hoc/NavHOC';
 import withLoadingScreen from '../../hoc/pageTransition';
 import desertImg from '../../../assets/desertImg.jpg';
+import womenUnderWater from '../../../assets/womenUnderWater.jpg';
+import fGroup from '../../../assets/fGroup.jpg';
+import balloons from '../../../assets/balloons.jpg';
 
 import './styles.scss';
 
 const data = [
   [
     {
-      imageSrc: desertImg,
-      categories: ['Art', 'Portrait', 'Creative direction'],
+      imageSrc: balloons,
+      categories: ['Art', 'Creative direction', 'Portrait'],
     },
     {
-      imageSrc: desertImg,
+      imageSrc: womenUnderWater,
       categories: ['Art', 'Group direction', 'Brand featuring'],
     },
   ],
   [
     {
-      imageSrc: desertImg,
+      imageSrc: fGroup,
       categories: ['Group direction', 'Portrait', 'Creative direction'],
     },
     {
       imageSrc: desertImg,
-      categories: ['Art', 'Creative direction', 'Portrait'],
+      categories: ['Art', 'Portrait', 'Creative direction'],
     },
   ],
   [
@@ -116,7 +119,6 @@ const Work = () => {
       <Header
         contents={['WORK']}
         customContainerStyles={{
-          margin: '5px',
           paddingTop: '3vw',
           fontSize: '6vw',
           lineHeight: '5vw',
@@ -167,7 +169,19 @@ const Work = () => {
       {filteredWorks.map((batch, i) => {
         return (
           <Fragment key={i}>
-            <div className="hori-separator"></div>
+            <motion.div
+              className="hori-separator"
+              initial={{
+                width: 0,
+              }}
+              animate={{
+                transformOrigin: 'center center',
+                width: '100%',
+                transition: {
+                  duration: 0.8,
+                },
+              }}
+            ></motion.div>
             <div className="works-grid-container">
               {batch.map((workSrc, index) => {
                 const batchClassName =
@@ -178,11 +192,25 @@ const Work = () => {
                     className={`works-image-container ${batchClassName}`}
                     key={index}
                   >
-                    <img
+                    {/* <img
                       src={workSrc.imageSrc}
                       alt={`${workSrc.imageSrc}-img`}
                       className="works-grid-image"
-                    />
+                    /> */}
+                    <div style={{ overflow: 'hidden' }}>
+                      <motion.div
+                        className="works-grid-image"
+                        style={{
+                          backgroundImage: `url(${workSrc.imageSrc})`,
+                        }}
+                        initial={{ scale: 1.2, rotate: '10deg' }}
+                        animate={{
+                          scale: 1,
+                          rotate: '0deg',
+                          transition: { duration: 0.8 },
+                        }}
+                      />
+                    </div>
                     <div className="categories">
                       {workSrc.categories.map((category, i) => (
                         <span className="category" key={i}>

@@ -4,6 +4,7 @@ import './App.scss';
 import { ContactForm } from './components';
 import { ContactFormProvider } from './providers/contact';
 import HorizontalAbout from './pages/HorizontalAbout/HorizontalAbout';
+import ContactPage from './pages/Contact';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
             </Switch>
           </div>
         </BrowserRouter>
-        <ContactForm />
+        <ContactPage />
       </div>
     </ContactFormProvider>
   );
