@@ -1,0 +1,31 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+// Scroll bar hide
+body::-webkit-scrollbar {
+  width: 0 !important;
+}
+// firefox - scrollbar hide
+html {
+  scrollbar-width: none;
+  // overflow: -moz-scrollbars-none;
+}
+
+// edge - scrollbar hide
+body {
+  -ms-overflow-style: none;
+  overscroll-behavior: none;
+}
+
+::selection {
+  background: #a2a09c;
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 300;
+}

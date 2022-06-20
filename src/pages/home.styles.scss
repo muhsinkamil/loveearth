@@ -1,0 +1,64 @@
+.about-sub {
+  font-size: 1.5vw;
+  line-height: 1.1;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.about-subtitle {
+  padding-top: 6vw;
+}
+
+.about-section-container {
+  display: flex;
+  margin: 5px;
+  gap: 10px;
+}
+
+.about-right-section {
+  // padding of about heading + subtitle
+  width: 55%;
+  padding: 16vw 4vw 0 9vw;
+}
+
+.abt-r-sec-para {
+  margin-bottom: 2vw;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.portfolio {
+  display: flex;
+  justify-content: center;
+  margin-top: 4vw;
+  margin-bottom: 8vw;
+}
+
+.collabs {
+  .brands-worked {
+    font-size: 2.5vw;
+    text-transform: uppercase;
+    line-height: 1;
+    font-weight: 400;
+    margin-bottom: 2vw;
+  }
+}
+
+.home-team-swipe {
+  margin-top: 10vw;
+}
+
+@media only screen and (max-width: 800px) {
+  .about-section-container {
+    flex-direction: column;
+  }
+
+  .about-sub {
+    font-size: 3.4vw;
+  }
+
+  .about-right-section {
+    width: 100%;
+    padding: 10px 0;
+  }
+}

@@ -1,0 +1,43 @@
+.header-img {
+  display: flex;
+  justify-content: center;
+  margin: '5vw 0';
+  overflow: hidden;
+
+  .office-img {
+    //   object-fit: cover;
+    width: 90vw;
+  }
+}
+
+.about-scroll {
+  margin-bottom: 15vw;
+}
+
+.team-section {
+  text-transform: uppercase;
+
+  .team-heading {
+    font-size: 4.5vw;
+    font-weight: 400;
+    margin-bottom: min(2vw, 50px);
+  }
+
+  .team-img-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+}
+
+.hiring-heading {
+  font-size: 4.2vw;
+  font-weight: 400;
+  margin-top: min(2vw, 50px);
+  margin-bottom: min(2vw, 50px);
+}
+
+.about-team-swipe {
+  margin-top: 10vw;
+  padding-bottom: max(3vw, 100px);
+}
