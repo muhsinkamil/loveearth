@@ -3,6 +3,13 @@
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-red.svg?cacheSeconds=2592000" />
 </p>
 
+## About
+
+📷 Web for photograph agency showing the works and portfolio
+
+🔥 Project is made with React & Framer motion
+
+
 ## Contributing
 
 🏋️‍♂️ If you find any improvements to the project, please open a github issue and tag a 'Improvement' 
