@@ -17,6 +17,7 @@ type SmallNavProps = {
   rightItems: { item: string; navigateTo?: string }[];
   leftLogo: string;
   handleContactClick: () => void;
+  bg: string;
 };
 
 const SmallClosedNav = ({
@@ -25,9 +26,10 @@ const SmallClosedNav = ({
   rightItems,
   leftLogo,
   handleContactClick,
+  bg,
 }: SmallNavProps) => {
   return (
-    <div className="nav-container">
+    <div className="nav-container" style={{ backgroundColor: bg }}>
       <Link to="/">
         <div className="left-item">{leftLogo}</div>
       </Link>
@@ -43,7 +45,7 @@ const SmallClosedNav = ({
           {rightItems.map((item, index) => {
             if (item.navigateTo) {
               return (
-                <li className="right-item" key={index}>
+                <li className="right-item hvr-underln-anim" key={index}>
                   <Link to={item.navigateTo}>{item.item}</Link>
                 </li>
               );
@@ -149,6 +151,7 @@ const Navbar = ({ leftLogo, rightItems, match, bg }: Props) => {
             setMobileMenuStatus={setMobileMenuStatus}
             mobileMenuStatus={mobileMenuStatus}
             handleContactClick={handleContactClick}
+            bg={bg}
           />
         </>
       )}
