@@ -1,6 +1,7 @@
 import './horizontalAbout.styles.scss';
 import SmoothScroll from '../../components/SmoothScroll';
 import { Header, Navbar } from '../../components';
+import withLoadingScreen from '../../hoc/pageTransition';
 
 const HorizontalAbout = () => {
   const aboutSection = (
@@ -55,4 +56,4 @@ const HorizontalAbout = () => {
   );
 };
 
-export default HorizontalAbout;
+export default withLoadingScreen(HorizontalAbout);
