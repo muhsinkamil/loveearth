@@ -15,13 +15,13 @@ import Person4 from '../../assets/teams/person-4.jpg';
 import Person6 from '../../assets/teams/person-6.jpg';
 import Person7 from '../../assets/teams/person-7.jpg';
 
-import aboutSwiperImg1 from '../../assets/aboutSwiper/aboutSwiper1.jpg';
-import aboutSwiperImg2 from '../../assets/aboutSwiper/aboutSwiper2.jpg';
-import aboutSwiperImg3 from '../../assets/aboutSwiper/aboutSwiper3.jpg';
-import aboutSwiperImg4 from '../../assets/aboutSwiper/aboutSwiper4.jpg';
-import aboutSwiperImg5 from '../../assets/aboutSwiper/aboutSwiper5.jpg';
-import aboutSwiperImg6 from '../../assets/aboutSwiper/aboutSwiper6.jpg';
-import aboutSwiperImg7 from '../../assets/aboutSwiper/aboutSwiper7.jpg';
+import aboutSwiperImg1 from '../../assets/aboutSwiper/aboutSwiper1.webp';
+import aboutSwiperImg2 from '../../assets/aboutSwiper/aboutSwiper2.webp';
+import aboutSwiperImg3 from '../../assets/aboutSwiper/aboutSwiper3.webp';
+import aboutSwiperImg4 from '../../assets/aboutSwiper/aboutSwiper4.webp';
+import aboutSwiperImg5 from '../../assets/aboutSwiper/aboutSwiper5.webp';
+import aboutSwiperImg6 from '../../assets/aboutSwiper/aboutSwiper6.webp';
+import aboutSwiperImg7 from '../../assets/aboutSwiper/aboutSwiper7.webp';
 
 import TeamMember from '../components/TeamMember';
 import { jobHirings } from '../translations/brandsWorked';
