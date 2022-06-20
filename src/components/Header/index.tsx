@@ -60,6 +60,7 @@ const Header = ({
         display: 'flex',
         flexDirection: 'column',
         overflow: 'hidden',
+        letterSpacing: '2px',
         ...customContainerStyles,
       }}
     >

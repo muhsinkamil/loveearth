@@ -100,7 +100,7 @@ const About = () => {
           margin: '0 5px',
           paddingTop: '7vw',
           fontSize: '6vw',
-          lineHeight: '5vw',
+          lineHeight: '6vw',
           paddingBottom: '5vw',
         }}
         // @TODO: check styles

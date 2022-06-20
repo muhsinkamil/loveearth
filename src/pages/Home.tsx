@@ -76,7 +76,7 @@ const Home = () => {
         <section className="about-section-container">
           <div className="about-left-section">
             <Header
-              contents={['About']}
+              contents={['ABOUT US']}
               customContainerStyles={{
                 paddingTop: '6vw',
                 fontSize: '4.8vw',
