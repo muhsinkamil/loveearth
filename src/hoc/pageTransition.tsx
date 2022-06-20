@@ -15,7 +15,7 @@ const withLoadingScreen = (WrappedComponent: any) => {
     render() {
       return (
         <AnimatePresence>
-          {this.state.pageLoading ? (
+          {/* {this.state.pageLoading ? (
             <motion.div
               key="loading-screen"
               initial={{ translateY: 1000 }}
@@ -30,9 +30,9 @@ const withLoadingScreen = (WrappedComponent: any) => {
             >
               <LoadingScreen />
             </motion.div>
-          ) : (
-            <WrappedComponent {...this.props} />
-          )}
+          ) : ( */}
+          <WrappedComponent {...this.props} />
+          {/* )} */}
         </AnimatePresence>
       );
     }

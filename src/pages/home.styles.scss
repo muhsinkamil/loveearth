@@ -1,6 +1,3 @@
-.home-container {
-}
-
 .about-sub {
   font-size: 1.5vw;
   line-height: 1.1;
@@ -36,6 +33,20 @@
   justify-content: center;
   margin-top: 4vw;
   margin-bottom: 8vw;
+}
+
+.collabs {
+  .brands-worked {
+    font-size: 2.5vw;
+    text-transform: uppercase;
+    line-height: 1;
+    font-weight: 400;
+    margin-bottom: 2vw;
+  }
+}
+
+.home-team-swipe {
+  margin-top: 10vw;
 }
 
 @media only screen and (max-width: 800px) {

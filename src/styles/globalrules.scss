@@ -17,6 +17,11 @@ html {
 // edge - scrollbar hide
 body {
   -ms-overflow-style: none;
+  overscroll-behavior: none;
+}
+
+::selection {
+  background: #a2a09c;
 }
 
 p {

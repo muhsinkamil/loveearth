@@ -1,0 +1,84 @@
+.about-pg-container {
+  display: flex;
+  /* 	gap: 30px; */
+
+  .left {
+    width: 50%;
+    // background-color: red;
+    padding-top: 100px;
+    height: 100%;
+    position: sticky;
+    top: 0px;
+    line-height: 0.8;
+    font-weight: 400;
+
+    .services-offered {
+      display: flex;
+      flex-direction: column;
+      font-size: 4vw;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+  }
+
+  .right {
+    display: flex;
+    padding-top: 100px;
+    overflow: hidden;
+    width: 50%;
+
+    .scroll-heading {
+      display: none;
+    }
+
+    .ruler {
+      width: 5px;
+      background-color: black;
+      height: 100vh;
+      margin-right: 1.5vw;
+      height: auto;
+    }
+
+    .scroll-elements {
+      .hori-ruler {
+        height: 1px;
+        width: 100%;
+        background-color: #2a2a2a;
+        margin: 20px 0;
+      }
+    }
+  }
+}
+
+path {
+  stroke-width: 3;
+  stroke: #2a2a2a;
+  fill: none;
+  stroke-width: 3px;
+}
+
+@media only screen and (max-width: 700px) {
+  .about-pg-container {
+    display: flex;
+    flex-direction: column;
+
+    .left {
+      svg {
+        height: 5px;
+      }
+    }
+
+    .right {
+      width: 100%;
+      padding: 0;
+
+      .scroll-heading {
+        display: block;
+      }
+
+      .ruler {
+        display: none;
+      }
+    }
+  }
+}

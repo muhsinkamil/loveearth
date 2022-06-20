@@ -1,18 +1,22 @@
+import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useState } from 'react';
 import './Navbar.scss';
-import { Link } from 'react-router-dom';
+import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
+import { useContactForm } from '../../providers/contact';
+import { hideBodyOverflow } from '../../helpers';
 
 type Props = {
   leftLogo: string;
-  rightItems: { item: string; navigateTo: string }[];
-};
+  rightItems: { item: string; navigateTo?: string }[];
+  bg: string;
+} & RouteComponentProps;
 
 type SmallNavProps = {
   mobileMenuStatus: boolean;
   setMobileMenuStatus: (status: boolean) => void;
-  rightItems: { item: string; navigateTo: string }[];
+  rightItems: { item: string; navigateTo?: string }[];
   leftLogo: string;
+  handleContactClick: () => void;
 };
 
 const SmallClosedNav = ({
@@ -20,6 +24,7 @@ const SmallClosedNav = ({
   setMobileMenuStatus,
   rightItems,
   leftLogo,
+  handleContactClick,
 }: SmallNavProps) => {
   return (
     <div className="nav-container">
@@ -35,18 +40,55 @@ const SmallClosedNav = ({
 
       <ul className="lg-close-rt-items">
         <>
-          {rightItems.map((item, index) => (
-            <li className="right-item" key={index}>
-              <Link to={item.navigateTo}>{item.item}</Link>
-            </li>
-          ))}
+          {rightItems.map((item, index) => {
+            if (item.navigateTo) {
+              return (
+                <li className="right-item" key={index}>
+                  <Link to={item.navigateTo}>{item.item}</Link>
+                </li>
+              );
+            }
+
+            if (item.item === 'CONTACT') {
+              return (
+                <li key={index} onClick={handleContactClick}>
+                  <span className="right-item hvr-underln-anim">
+                    {item.item}
+                  </span>
+                </li>
+              );
+            }
+          })}
         </>
       </ul>
     </div>
   );
 };
 
-const Navbar = ({ leftLogo, rightItems }: Props) => {
+const Navbar = ({ leftLogo, rightItems, match, bg }: Props) => {
+  const [fixedPos, setFixedPos] = useState(false);
+
+  const {
+    actions: { openContactForm },
+  } = useContactForm();
+
+  const handleContactClick = () => {
+    hideBodyOverflow();
+    openContactForm();
+  };
+
+  useEffect(() => {
+    const fixNavBar = () => {
+      if (window.scrollY > 200) setFixedPos(true);
+      else setFixedPos(false);
+    };
+
+    if (match.path === '/about') {
+      setFixedPos(true);
+    } else {
+      window.addEventListener('scroll', fixNavBar);
+    }
+  }, []);
   const [mobileMenuStatus, setMobileMenuStatus] = useState(false);
 
   return (
@@ -78,11 +120,24 @@ const Navbar = ({ leftLogo, rightItems }: Props) => {
           </div>
           <ul className="lg-right-items">
             <>
-              {rightItems.map((item, index) => (
-                <li className="right-item" key={index}>
-                  <Link to={item.navigateTo}>{item.item}</Link>
-                </li>
-              ))}
+              {rightItems.map((item, index) => {
+                if (item.navigateTo) {
+                  return (
+                    <li className="right-item" key={index}>
+                      <Link to={item.navigateTo}>{item.item}</Link>
+                    </li>
+                  );
+                }
+                if (item.item === 'CONTACT') {
+                  return (
+                    <li key={index} onClick={handleContactClick}>
+                      <span className="right-item hvr-underln-anim">
+                        {item.item}
+                      </span>
+                    </li>
+                  );
+                }
+              })}
             </>
           </ul>
         </motion.div>
@@ -93,6 +148,7 @@ const Navbar = ({ leftLogo, rightItems }: Props) => {
             rightItems={rightItems}
             setMobileMenuStatus={setMobileMenuStatus}
             mobileMenuStatus={mobileMenuStatus}
+            handleContactClick={handleContactClick}
           />
         </>
       )}
@@ -100,4 +156,4 @@ const Navbar = ({ leftLogo, rightItems }: Props) => {
   );
 };
 
-export default Navbar;
+export default withRouter(Navbar);

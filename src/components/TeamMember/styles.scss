@@ -1,0 +1,27 @@
+.team-member-container {
+  //   background-color: red;
+  border-top: 1px solid black;
+  //   border-bottom: 1px solid black;
+  padding: 25px 0 0 0;
+
+  .img-container {
+    overflow: hidden;
+
+    .team-img {
+      height: 28vh;
+      width: 100%;
+      object-fit: cover;
+
+      clip-path: ellipse(100% 100% at 50% 50%);
+      transition: clip-path 750ms;
+
+      &:hover {
+        clip-path: ellipse(50% 50% at 50% 50%);
+      }
+    }
+  }
+
+  .member-name {
+    margin-top: 1vw;
+  }
+}
