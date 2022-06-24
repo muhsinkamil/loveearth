@@ -34,10 +34,10 @@ import nature2 from '/assets/nature/nature2.jpg';
 import nature3 from '/assets/nature/nature3.jpg';
 import nature4 from '/assets/nature/nature4.jpg';
 
-import city1 from '/assets/city/city1.jpg';
-import city2 from '/assets/city/city2.jpg';
-import city3 from '/assets/city/city3.jpg';
-import city4 from '/assets/city/city4.jpg';
+import city1 from '/assets/city/city1.webp';
+import city2 from '/assets/city/city2.webp';
+import city3 from '/assets/city/city3.webp';
+import city4 from '/assets/city/city4.webp';
 
 import palace1 from '/assets/palace/palace1.jpg';
 import palace2 from '/assets/palace/palace2.jpg';
