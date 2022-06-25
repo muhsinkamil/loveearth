@@ -4,7 +4,6 @@ import { ContactForm, Header } from '../../components';
 import withFooter from '../../hoc/footerHOC';
 import withNavBar from '../../hoc/NavHOC';
 import withLoadingScreen from '../../hoc/pageTransition';
-import desertImg from '../../../assets/desertImg.jpg';
 import womenUnderWater from '../../../assets/womenUnderWater.jpg';
 import fGroup from '../../../assets/fGroup.jpg';
 import balloons from '../../../assets/balloons.jpg';
@@ -20,9 +19,9 @@ import water2 from '/assets/womenUnderWater/water2.jpg';
 import water3 from '/assets/womenUnderWater/water3.jpg';
 import water4 from '/assets/womenUnderWater/water4.jpg';
 
-import grp1 from '/assets/fGroup/grp1.jpg';
-import grp2 from '/assets/fGroup/grp2.jpg';
-import grp3 from '/assets/fGroup/grp3.jpg';
+import grp1 from '/assets/fGroup/grp1.webp';
+import grp2 from '/assets/fGroup/grp2.webp';
+import grp3 from '/assets/fGroup/grp3.webp';
 
 import portrait1 from '/assets/portraitPics/portrait1.jpg';
 import portrait2 from '/assets/portraitPics/portrait2.jpg';
