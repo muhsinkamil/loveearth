@@ -4,9 +4,9 @@ import { ContactForm, Header } from '../../components';
 import withFooter from '../../hoc/footerHOC';
 import withNavBar from '../../hoc/NavHOC';
 import withLoadingScreen from '../../hoc/pageTransition';
-import womenUnderWater from '../../../assets/womenUnderWater.jpg';
-import fGroup from '../../../assets/fGroup.jpg';
-import balloons from '../../../assets/balloons.jpg';
+import womenUnderWater from '../../../assets/womenUnderWater/womenUnderWater.webp';
+import fGroup from '../../../assets/fGroup/fGroup.webp';
+import balloons from '../../../assets/loons/loons.webp';
 import { useWorksModal } from '../../providers/works';
 import SwiperFreeMode from '../../components/SwiperFreeMode';
 

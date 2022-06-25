@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import portraitImg from '../../../assets/portraitPics/portrait4.jpg';
-import womenUnderWater from '../../../assets/womenUnderWater.jpg';
-import fGroup from '../../../assets/fGroup.jpg';
-import balloons from '../../../assets/balloons.jpg';
+import womenUnderWater from '../../../assets/womenUnderWater/womenUnderWater.webp';
+import fGroup from '../../../assets/fGroup/fGroup.webp';
+import balloons from '../../../assets/loons/loons.webp';
 
 import './styles.scss';
 

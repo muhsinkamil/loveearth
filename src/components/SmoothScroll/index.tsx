@@ -27,11 +27,11 @@ import Person4 from '../../../assets/teams/person-4.jpg';
 import Person6 from '../../../assets/teams/person-6.jpg';
 import Person7 from '../../../assets/teams/person-7.jpg';
 
-import gallery1 from '../../../assets/gallery/gallery1.jpg';
-import gallery2 from '../../../assets/gallery/gallery2.jpg';
-import gallery3 from '../../../assets/gallery/gallery3.jpg';
-import gallery4 from '../../../assets/gallery/gallery4.jpg';
-import gallery5 from '../../../assets/gallery/gallery5.jpg';
+import gallery1 from '../../../assets/gallery/gallery1.webp';
+import gallery2 from '../../../assets/gallery/gallery2.webp';
+import gallery3 from '../../../assets/gallery/gallery3.webp';
+import gallery4 from '../../../assets/gallery/gallery4.webp';
+import gallery5 from '../../../assets/gallery/gallery5.webp';
 
 import TeamMember from '../TeamMember';
 import AboutFloatingImage from '../../components/AboutFloatingImage';
