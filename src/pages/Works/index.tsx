@@ -14,10 +14,10 @@ import Loons1 from '/assets/loons/loons1.webp';
 import Loons2 from '/assets/loons/loons2.webp';
 import Loons3 from '/assets/loons/loons3.webp';
 
-import water1 from '/assets/womenUnderWater/water1.jpg';
-import water2 from '/assets/womenUnderWater/water2.jpg';
-import water3 from '/assets/womenUnderWater/water3.jpg';
-import water4 from '/assets/womenUnderWater/water4.jpg';
+import water1 from '/assets/womenUnderWater/water1.webp';
+import water2 from '/assets/womenUnderWater/water2.webp';
+import water3 from '/assets/womenUnderWater/water3.webp';
+import water4 from '/assets/womenUnderWater/water4.webp';
 
 import grp1 from '/assets/fGroup/grp1.webp';
 import grp2 from '/assets/fGroup/grp2.webp';
