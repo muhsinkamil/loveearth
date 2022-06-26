@@ -11,13 +11,13 @@ import '../styles/reusableStyles.scss';
 import './home.styles.scss';
 import SwiperFreeMode from '../components/SwiperFreeMode';
 
-import swiperImg1 from '../../assets/homeSwiper/swiperSlide1.jpg';
-import swiperImg2 from '../../assets/homeSwiper/swiperSlide2.jpg';
-import swiperImg3 from '../../assets/homeSwiper/swiperSlide3.jpg';
-import swiperImg4 from '../../assets/homeSwiper/swiperSlide4.jpg';
-import swiperImg5 from '../../assets/homeSwiper/swiperSlide5.jpg';
-import swiperImg6 from '../../assets/homeSwiper/swiperSlide6.jpg';
-import swiperImg7 from '../../assets/homeSwiper/swiperSlide7.jpg';
+import swiperImg1 from '../../assets/homeSwiper/swiperSlide1.webp';
+import swiperImg2 from '../../assets/homeSwiper/swiperSlide2.webp';
+import swiperImg3 from '../../assets/homeSwiper/swiperSlide3.webp';
+import swiperImg4 from '../../assets/homeSwiper/swiperSlide4.webp';
+import swiperImg5 from '../../assets/homeSwiper/swiperSlide5.webp';
+import swiperImg6 from '../../assets/homeSwiper/swiperSlide6.webp';
+import swiperImg7 from '../../assets/homeSwiper/swiperSlide7.webp';
 
 const swiperImages = [
   swiperImg1,

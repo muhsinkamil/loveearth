@@ -10,9 +10,9 @@ import balloons from '../../../assets/loons/loons.webp';
 import { useWorksModal } from '../../providers/works';
 import SwiperFreeMode from '../../components/SwiperFreeMode';
 
-import Loons1 from '/assets/loons/loons1.jpg';
-import Loons2 from '/assets/loons/loons2.jpg';
-import Loons3 from '/assets/loons/loons3.jpg';
+import Loons1 from '/assets/loons/loons1.webp';
+import Loons2 from '/assets/loons/loons2.webp';
+import Loons3 from '/assets/loons/loons3.webp';
 
 import water1 from '/assets/womenUnderWater/water1.jpg';
 import water2 from '/assets/womenUnderWater/water2.jpg';
