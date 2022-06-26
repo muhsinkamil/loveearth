@@ -35,7 +35,7 @@ const Home = () => {
   const width = useTransform(
     scrollYProgress,
     [0, 0.8],
-    [400, window.innerWidth + window.innerWidth / 1.75],
+    [window.innerWidth / 2, window.innerWidth],
   );
 
   return (
