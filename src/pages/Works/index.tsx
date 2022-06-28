@@ -28,25 +28,25 @@ import portrait2 from '/assets/portraitPics/portrait2.jpg';
 import portrait3 from '/assets/portraitPics/portrait3.jpg';
 import portrait4 from '/assets/portraitPics/portrait4.jpg';
 
-import nature1 from '/assets/nature/nature1.jpg';
-import nature2 from '/assets/nature/nature2.jpg';
-import nature3 from '/assets/nature/nature3.jpg';
-import nature4 from '/assets/nature/nature4.jpg';
+import nature1 from '/assets/nature/nature1.webp';
+import nature2 from '/assets/nature/nature2.webp';
+import nature3 from '/assets/nature/nature3.webp';
+import nature4 from '/assets/nature/nature4.webp';
 
 import city1 from '/assets/city/city1.webp';
 import city2 from '/assets/city/city2.webp';
 import city3 from '/assets/city/city3.webp';
 import city4 from '/assets/city/city4.webp';
 
-import palace1 from '/assets/palace/palace1.jpg';
-import palace2 from '/assets/palace/palace2.jpg';
-import palace3 from '/assets/palace/palace3.jpg';
-import palace4 from '/assets/palace/palace4.jpg';
+import palace1 from '/assets/palace/palace1.webp';
+import palace2 from '/assets/palace/palace2.webp';
+import palace3 from '/assets/palace/palace3.webp';
+import palace4 from '/assets/palace/palace4.webp';
 
-import menF1 from '/assets/menFashion/menF1.jpg';
-import menF2 from '/assets/menFashion/menF2.jpg';
-import menF3 from '/assets/menFashion/menF3.jpg';
-import menF4 from '/assets/menFashion/menF4.jpg';
+import menF1 from '/assets/menFashion/menF1.webp';
+import menF2 from '/assets/menFashion/menF2.webp';
+import menF3 from '/assets/menFashion/menF3.webp';
+import menF4 from '/assets/menFashion/menF4.webp';
 
 import './styles.scss';
 import { hideBodyOverflow, unsetBodyOverflow } from '../../helpers';
